@@ -3,17 +3,21 @@ package org.margo.languagesradar
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.margo.languagesradar.parsers.JavaReleaseParser
+import org.margo.languagesradar.parsers.KotlinReleaseParser
 import org.margo.languagesradar.parsers.Release
 import org.margo.languagesradar.parsers.ReleaseParser
 import java.lang.Exception
 
 fun main() {
-    val latestVersions = Scrapper.getLatestVersions(Language.JAVA)
+    val latestVersions = Scrapper.getLatestVersions(Language.KOTLIN)
     println(latestVersions)
 }
 
 object Scrapper {
-    private val parsers: Map<Language, ReleaseParser> = mapOf(Language.JAVA to JavaReleaseParser())
+    private val parsers: Map<Language, ReleaseParser> = mapOf(
+            Language.JAVA to JavaReleaseParser(),
+            Language.KOTLIN to KotlinReleaseParser()
+    )
     
     fun getLatestVersions(vararg langs: Language) : Map<Language, Release?> =
         langs.map {

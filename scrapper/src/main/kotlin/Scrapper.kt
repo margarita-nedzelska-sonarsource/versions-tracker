@@ -2,19 +2,21 @@ package org.margo.languagesradar
 
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
+import org.margo.languagesradar.Language.*
 import org.margo.languagesradar.parsers.*
 import java.lang.Exception
 
 fun main() {
-    val latestVersions = Scrapper.getLatestVersions(Language.SCALA)
-    println(latestVersions)
+    val latestVersions = Scrapper.getLatestVersions(SCALA, JAVA, KOTLIN, GO)
+    latestVersions.forEach(::println)
 }
 
 object Scrapper {
     private val parsers: Map<Language, ReleaseParser> = mapOf(
-            Language.JAVA to JavaReleaseParser(),
-            Language.KOTLIN to KotlinReleaseParser(),
-            Language.SCALA to ScalaReleaseParser(),
+            JAVA to JavaReleaseParser(),
+            KOTLIN to KotlinReleaseParser(),
+            SCALA to ScalaReleaseParser(),
+            GO to GoReleaseParser(),
     )
     
     fun getLatestVersions(vararg langs: Language) : Map<Language, Release?> =
@@ -30,7 +32,7 @@ object Scrapper {
         } catch (e: Exception) {
             //handle exceptions here
             println("Sth bad happened : ${e.message}")
-            return null
+            null
         }
     }
     

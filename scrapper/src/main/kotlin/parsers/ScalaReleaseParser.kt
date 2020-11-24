@@ -6,7 +6,7 @@ import org.jsoup.nodes.Element
 class ScalaReleaseParser : ReleaseParser {
     companion object {
         const val BASE_URL = "github.com"
-        val RELEASE_VERSION = Regex("Scala\\s(\\d+\\.\\d+\\.\\d)")
+        val RELEASE_VERSION = Regex("Scala\\s(\\d{1,2}\\.\\d{1,2}\\.\\d{1,2})")
     }
 
     override fun parse(document: Document?): Release =

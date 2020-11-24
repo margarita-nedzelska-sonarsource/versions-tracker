@@ -12,9 +12,9 @@ class KotlinReleaseParserTest {
     
     @Test
     fun testGetVersion() {
-        val javaReleaseParser = KotlinReleaseParser()
+        val kotlinReleaseParser = KotlinReleaseParser()
 
-        val (version, notes) = javaReleaseParser.parse(doc)
+        val (version, notes) = kotlinReleaseParser.parse(doc)
         
         assertEquals("1.4.20", version)
         assertEquals(listOf("kotlinlang.org/releases.html"), notes)

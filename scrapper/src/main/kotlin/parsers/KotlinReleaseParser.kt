@@ -6,7 +6,7 @@ import org.jsoup.nodes.Element
 class KotlinReleaseParser : ReleaseParser {
     companion object {
         const val RELEASES_URL = "kotlinlang.org/releases.html"
-        val RELEASE_VERSION = Regex("\\d+\\.\\d+\\.\\d")
+        val RELEASE_VERSION = Regex("\\d{1,2}\\.\\d{1,2}\\.\\d{1,2}")
     }
 
     override fun parse(document: Document?): Release =

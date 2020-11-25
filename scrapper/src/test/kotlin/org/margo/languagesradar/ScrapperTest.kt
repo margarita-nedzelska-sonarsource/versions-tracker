@@ -1,11 +1,11 @@
-package org.margo.languagesradar.parsers
+package org.margo.languagesradar
 
 import assertk.assertThat
 import assertk.assertions.containsOnly
 import org.junit.jupiter.api.Test
 import org.margo.languagesradar.Language.*
 import org.margo.languagesradar.Languages.latestKnownVersions
-import org.margo.languagesradar.Scrapper
+import org.margo.languagesradar.parsers.Release
 
 class ScrapperTest {
     

@@ -1,6 +1,7 @@
 plugins {
     java
     kotlin("jvm") version "1.4.10"
+    jacoco
 }
 
 group = "com.margo.versionsradar"
@@ -8,6 +9,11 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+}
+
+jacoco {
+    toolVersion = "0.8.6"
+    reportsDir = file("$buildDir/reports/jacoco")
 }
 
 dependencies {
@@ -18,6 +24,15 @@ dependencies {
     testImplementation("com.willowtreeapps.assertk:assertk:0.23")
 }
 
-tasks.withType<Test> {
+tasks.test {
     useJUnitPlatform()
+    finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
+}
+tasks.jacocoTestReport {
+    dependsOn(tasks.test) // tests are required to run before generating the report
+    reports {
+        xml.isEnabled = true
+        csv.isEnabled = false
+        html.destination = file("${buildDir}/jacocoHtml")
+    }
 }

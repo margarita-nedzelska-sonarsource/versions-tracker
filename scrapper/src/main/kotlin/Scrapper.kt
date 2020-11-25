@@ -21,10 +21,10 @@ object Scrapper {
     )
     
     fun getLatestVersions(vararg langs: Language) : Map<Language, Release?> =
-        langs.map {
-            val url = Languages.releasesUrl[it]
-            it to parsers[it]?.parse(url?.connect())
-        }.toMap()
+            langs.map {
+                val url = Languages.releasesUrl[it]
+                it to parsers[it]?.parse(url?.connect())
+            }.toMap()
     
     
     private fun String.connect() : Document? {

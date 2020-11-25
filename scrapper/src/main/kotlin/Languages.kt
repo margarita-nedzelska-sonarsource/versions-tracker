@@ -26,10 +26,10 @@ object Languages {
 
     val latestKnownVersions: Map<Language, String> = mapOf(
         Language.JAVA to "15",
-        Language.KOTLIN to "1.4",
-        Language.SCALA to "2.13",
+        Language.KOTLIN to "1.4.20",
+        Language.SCALA to "2.13.4",
         Language.GO to "1.15",
-        Language.RUBY to "2.7",
+        Language.RUBY to "2.7.2",
         Language.APEX to "50",
         Language.SWIFT to "5.3",
         Language.DOTTY to "0.26"

@@ -15,6 +15,7 @@ dependencies {
     implementation("org.jsoup:jsoup:1.13.1")
     testImplementation(platform("org.junit:junit-bom:5.7.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("com.willowtreeapps.assertk:assertk:0.23")
 }
 
 tasks.withType<Test> {

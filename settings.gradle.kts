@@ -1,2 +1,2 @@
 rootProject.name = "LanguagesVersionsRadar"
-include(":scrapper")
+include(":scrapper", ":ktor-server")

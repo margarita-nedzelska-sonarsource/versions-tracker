@@ -55,8 +55,17 @@ class ScrapperTest {
     }
     
     @Test
+    fun testSwiftLatestRelease() {
+        val latestVersions = Scrapper.getLatestVersions(SWIFT)
+        
+        assertThat(latestVersions).containsOnly(
+                SWIFT to Release(latestKnownVersions[SWIFT]!!, listOf("https://github.com/apple/swift/releases/tag/swift-5.3.1-RELEASE"))
+        )
+    }
+    
+    @Test
     fun testAllLatestVersions() {
-        val latestVersions = Scrapper.getLatestVersions(JAVA, KOTLIN, SCALA, GO, RUBY)
+        val latestVersions = Scrapper.getLatestVersions(JAVA, KOTLIN, SCALA, GO, RUBY, SWIFT)
         
         assertThat(latestVersions.map { (k, v) -> k to v?.version })
                 .containsOnly(
@@ -65,6 +74,7 @@ class ScrapperTest {
                         SCALA to latestKnownVersions[SCALA],
                         GO to latestKnownVersions[GO],
                         RUBY to latestKnownVersions[RUBY],
+                        SWIFT to latestKnownVersions[SWIFT],
                 )
     }
 }

@@ -31,7 +31,7 @@ object Languages {
         Language.GO to "1.15",
         Language.RUBY to "2.7.2",
         Language.APEX to "50",
-        Language.SWIFT to "5.3",
+        Language.SWIFT to "5.3.1",
         Language.DOTTY to "0.26"
     )
     

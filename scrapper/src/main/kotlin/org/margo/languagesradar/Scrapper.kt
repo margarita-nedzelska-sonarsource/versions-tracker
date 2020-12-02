@@ -7,7 +7,7 @@ import org.margo.languagesradar.parsers.*
 import java.lang.Exception
 
 fun main() {
-    val latestVersions = Scrapper.getLatestVersions(SCALA, JAVA, KOTLIN, GO, RUBY)
+    val latestVersions = Scrapper.getLatestVersions(SCALA, JAVA, KOTLIN, GO, RUBY, SWIFT)
     latestVersions.forEach(::println)
 }
 
@@ -18,6 +18,7 @@ object Scrapper {
             SCALA to ScalaReleaseParser(),
             GO to GoReleaseParser(),
             RUBY to RubyReleaseParser(),
+            SWIFT to SwiftReleaseParser(),
     )
     
     fun getLatestVersions(vararg langs: Language) : Map<Language, Release?> =

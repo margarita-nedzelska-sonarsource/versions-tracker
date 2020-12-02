@@ -26,6 +26,7 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.7.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("com.willowtreeapps.assertk:assertk:0.23")
+    testImplementation("io.ktor:ktor-server-test-host:1.4.3")
 }
 
 tasks.test {

@@ -2,6 +2,7 @@ plugins {
     java
     kotlin("jvm") version "1.4.10"
     jacoco
+    application
 }
 
 group = "com.margo.versionsradar"
@@ -29,6 +30,10 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("com.willowtreeapps.assertk:assertk:0.23")
     testImplementation("io.ktor:ktor-server-test-host:1.4.3")
+}
+
+application {
+    mainClass.set("org.margo.languagesradar.server.ServerKt")
 }
 
 tasks.test {

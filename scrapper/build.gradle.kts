@@ -19,6 +19,7 @@ jacoco {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("org.jsoup:jsoup:1.13.1")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
     testImplementation(platform("org.junit:junit-bom:5.7.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("com.willowtreeapps.assertk:assertk:0.23")

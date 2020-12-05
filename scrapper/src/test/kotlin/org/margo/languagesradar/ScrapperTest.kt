@@ -2,6 +2,7 @@ package org.margo.languagesradar
 
 import assertk.assertThat
 import assertk.assertions.containsOnly
+import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
 import org.margo.languagesradar.Language.*
 import org.margo.languagesradar.Languages.latestKnownVersions
@@ -10,7 +11,7 @@ import org.margo.languagesradar.parsers.Release
 class ScrapperTest {
     
     @Test
-    fun testJavaLatestRelease() {
+    fun testJavaLatestRelease() = runBlocking {
         val latestVersions = Scrapper.getLatestVersions(JAVA)
         
         assertThat(latestVersions).containsOnly(
@@ -19,7 +20,7 @@ class ScrapperTest {
     }
 
     @Test
-    fun testKotlinLatestRelease() {
+    fun testKotlinLatestRelease() = runBlocking {
         val latestVersions = Scrapper.getLatestVersions(KOTLIN)
         
         assertThat(latestVersions).containsOnly(
@@ -28,7 +29,7 @@ class ScrapperTest {
     }
 
     @Test
-    fun testScalaLatestRelease() {
+    fun testScalaLatestRelease() = runBlocking {
         val latestVersions = Scrapper.getLatestVersions(SCALA)
         
         assertThat(latestVersions).containsOnly(
@@ -37,7 +38,7 @@ class ScrapperTest {
     }
 
     @Test
-    fun testGoLatestRelease() {
+    fun testGoLatestRelease() = runBlocking {
         val latestVersions = Scrapper.getLatestVersions(GO)
         
         assertThat(latestVersions).containsOnly(
@@ -46,7 +47,7 @@ class ScrapperTest {
     }
 
     @Test
-    fun testRubyLatestRelease() {
+    fun testRubyLatestRelease() = runBlocking {
         val latestVersions = Scrapper.getLatestVersions(RUBY)
         
         assertThat(latestVersions).containsOnly(
@@ -55,7 +56,7 @@ class ScrapperTest {
     }
     
     @Test
-    fun testSwiftLatestRelease() {
+    fun testSwiftLatestRelease() = runBlocking {
         val latestVersions = Scrapper.getLatestVersions(SWIFT)
         
         assertThat(latestVersions).containsOnly(
@@ -64,7 +65,7 @@ class ScrapperTest {
     }
     
     @Test
-    fun testAllLatestVersions() {
+    fun testAllLatestVersions() = runBlocking {
         val latestVersions = Scrapper.getLatestVersions(JAVA, KOTLIN, SCALA, GO, RUBY, SWIFT)
         
         assertThat(latestVersions.map { (k, v) -> k to v?.version })

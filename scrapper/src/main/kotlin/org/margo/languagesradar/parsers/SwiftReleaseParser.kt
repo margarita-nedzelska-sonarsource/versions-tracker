@@ -11,7 +11,7 @@ class SwiftReleaseParser : ReleaseParser {
 
     override fun parse(document: Document?): Release =
         document?.let {
-            val a = document.select("h2#releases + h3 + p a").first()
+            val a = document.selectFirst("h2#releases + h3 + p a")
             Release(a.getVersion(), listOf(a.getHref()))
         } ?: Release.EMPTY_RELEASE
     

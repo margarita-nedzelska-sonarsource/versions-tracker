@@ -69,7 +69,7 @@ fun Application.main() {
     }
 }
 
-private fun String?.getLatestVersions() = this?.split(",")
+private suspend fun String?.getLatestVersions() = this?.split(",")
     ?.map {
         Language.valueOf(it.toUpperCase(Locale.ROOT))
     }
@@ -77,7 +77,7 @@ private fun String?.getLatestVersions() = this?.split(",")
         Scrapper.getLatestVersions(*it?.toTypedArray() ?: Language.values())
     }
 
-private fun String?.getFullVersionsTable() = this.getLatestVersions()
+private suspend fun String?.getFullVersionsTable() = this.getLatestVersions()
     .map { (lang, release) ->
         ReleaseRecord(lang, Languages.supportedVersions[lang] ?: "",
             release?.version ?: "", release?.notes?.getOrElse(0) { "" } ?: "")

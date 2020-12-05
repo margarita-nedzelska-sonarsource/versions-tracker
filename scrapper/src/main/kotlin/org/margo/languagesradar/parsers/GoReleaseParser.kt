@@ -11,7 +11,7 @@ class GoReleaseParser : ReleaseParser {
 
     override fun parse(document: Document?): Release =
         document?.let {
-            val a = document.select("a:matchesOwn($RELEASE_VERSION)").first()
+            val a = document.selectFirst("a:matchesOwn($RELEASE_VERSION)")
             Release(a.getVersion(), listOf(a.getHref()))
         } ?: Release.EMPTY_RELEASE
     

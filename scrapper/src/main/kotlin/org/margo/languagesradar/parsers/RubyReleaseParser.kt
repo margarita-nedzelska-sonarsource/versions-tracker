@@ -11,7 +11,7 @@ class RubyReleaseParser : ReleaseParser {
 
     override fun parse(document: Document?): Release =
         document?.let {
-            val element = document.select("tr:matches($RELEASE_VERSION)").first()
+            val element = document.selectFirst("tr:matches($RELEASE_VERSION)")
             val name = element.getElementsByTag("td").first()
             val a = element.getElementsByTag("a").first()
             Release(name.getVersion(), listOf(a.getHref()))

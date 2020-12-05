@@ -101,4 +101,12 @@ class AppServerTest {
             }
         }
     }
+    @Test
+    fun testViewVersions() {
+        withTestApplication(Application::main) {
+            with(handleRequest(HttpMethod.Get, "/view/versions")) {
+                assertEquals(HttpStatusCode.OK, response.status())
+            }
+        }
+    }
 }

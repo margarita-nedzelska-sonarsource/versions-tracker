@@ -9,6 +9,7 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 jacoco {
@@ -21,6 +22,7 @@ dependencies {
     implementation("io.ktor:ktor-server-core:1.4.0")
     implementation("io.ktor:ktor-server-netty:1.4.0")
     implementation("io.ktor:ktor-jackson:1.4.0")
+    implementation("io.ktor:ktor-html-builder:1.4.3")
     
     implementation(project(":scrapper"))
     testImplementation(platform("org.junit:junit-bom:5.7.0"))

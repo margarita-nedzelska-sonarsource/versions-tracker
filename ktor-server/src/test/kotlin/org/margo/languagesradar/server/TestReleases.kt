@@ -36,6 +36,12 @@ val SWIFT_RELEASE =
                         "notes" : [ "https://github.com/apple/swift/releases/tag/swift-5.3.1-RELEASE" ]
                       }"""
 
+val DOTTY_RELEASE =
+    """"DOTTY" : {
+                        "version" : "0.26.0",
+                        "notes" : [ "https://github.com/lampepfl/dotty/releases/tag/0.26.0" ]
+                      }"""
+
 val JAVA_RELEASE_RECORD =
     """{
   "language" : "JAVA",
@@ -72,13 +78,6 @@ val RUBY_RELEASE_RECORD = """{
   "latestReleaseNote" : "www.ruby-lang.org/en/news/2020/10/02/ruby-2-7-2-released/"
 }"""
 
-val APEX_RELEASE_RECORD = """{
-  "language" : "APEX",
-  "supportedVersion" : "50",
-  "latestVersion" : "",
-  "latestReleaseNote" : ""
-}"""
-
 val SWIFT_RELEASE_RECORD = """{
   "language" : "SWIFT",
   "supportedVersion" : "5.3",
@@ -88,7 +87,7 @@ val SWIFT_RELEASE_RECORD = """{
 
 val DOTTY_RELEASE_RECORD = """{
   "language" : "DOTTY",
-  "supportedVersion" : "0.26",
-  "latestVersion" : "",
-  "latestReleaseNote" : ""
+  "supportedVersion" : "0.26.0",
+  "latestVersion" : "0.26.0",
+  "latestReleaseNote" : "https://github.com/lampepfl/dotty/releases/tag/0.26.0"
 }"""

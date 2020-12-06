@@ -3,6 +3,25 @@ package org.margo.languagesradar.server.html
 import kotlinx.html.*
 import org.margo.languagesradar.server.data.ReleaseRecord
 
+fun HTML.toHtml(result: List<ReleaseRecord>) {
+    head {
+        title {
+            +"Versions"
+        }
+        addCustomStyle()
+    }
+    body {
+        h2 {
+            +"Versions"
+        }
+        table {
+            releaseHeader()
+            result.forEach { releaseRow(it) }
+        }
+
+    }
+}
+
 fun HEAD.addCustomStyle() {
     style {
         unsafe {

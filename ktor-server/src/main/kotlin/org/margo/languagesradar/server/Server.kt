@@ -3,21 +3,18 @@ package org.margo.languagesradar.server
 import com.fasterxml.jackson.databind.SerializationFeature
 import io.ktor.application.*
 import io.ktor.features.*
+import io.ktor.html.*
 import io.ktor.http.*
-import io.ktor.html.respondHtml
 import io.ktor.jackson.*
 import io.ktor.response.*
 import io.ktor.routing.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
-import kotlinx.html.*
 import org.margo.languagesradar.Language
 import org.margo.languagesradar.Languages
 import org.margo.languagesradar.Scrapper
 import org.margo.languagesradar.server.data.ReleaseRecord
-import org.margo.languagesradar.server.html.addCustomStyle
-import org.margo.languagesradar.server.html.releaseHeader
-import org.margo.languagesradar.server.html.releaseRow
+import org.margo.languagesradar.server.html.toHtml
 import java.util.*
 
 fun main() {
@@ -45,37 +42,15 @@ fun Application.main() {
         }
         get(path = "/view/versions") {
             val result = call.parameters["langs"].getFullVersionsTable()
-
-            call.respondHtml {
-                head {
-                    title {
-                        +"Versions"
-                    }
-                    addCustomStyle()
-                }
-                body {
-                    h2 {
-                        +"Versions"
-                    }
-                    table {
-                        releaseHeader()
-                        result.forEach { releaseRow(it) }
-                    }
-
-                }
-
-            }
+            call.respondHtml { toHtml(result) }
         }
     }
 }
 
-private suspend fun String?.getLatestVersions() = this?.split(",")
-    ?.map {
-        Language.valueOf(it.toUpperCase(Locale.ROOT))
-    }
-    .let {
-        Scrapper.getLatestVersions(*it?.toTypedArray() ?: Language.values())
-    }
+private suspend fun String?.getLatestVersions() = this
+    ?.split(",")
+    ?.map { Language.valueOf(it.toUpperCase(Locale.ROOT)) }
+    .let { Scrapper.getLatestVersions(*it?.toTypedArray() ?: Language.values()) }
 
 private suspend fun String?.getFullVersionsTable() = this.getLatestVersions()
     .map { (lang, release) ->

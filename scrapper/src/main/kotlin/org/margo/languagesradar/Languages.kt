@@ -21,7 +21,7 @@ object Languages {
         Language.RUBY to "2.7",
         Language.APEX to "50",
         Language.SWIFT to "5.3",
-        Language.DOTTY to "0.26"
+        Language.DOTTY to "0.26.0"
     )
 
     val latestKnownVersions: Map<Language, String> = mapOf(
@@ -32,7 +32,7 @@ object Languages {
         Language.RUBY to "2.7.2",
         Language.APEX to "50",
         Language.SWIFT to "5.3.1",
-        Language.DOTTY to "0.26"
+        Language.DOTTY to "0.26.0"
     )
     
 }

@@ -65,8 +65,17 @@ class ScrapperTest {
     }
     
     @Test
+    fun testDottyLatestRelease() = runBlocking {
+        val latestVersions = Scrapper.getLatestVersions(DOTTY)
+
+        assertThat(latestVersions).containsOnly(
+                DOTTY to Release(latestKnownVersions[DOTTY]!!, listOf("https://github.com/lampepfl/dotty/releases/tag/0.26.0"))
+        )
+    }
+
+    @Test
     fun testAllLatestVersions() = runBlocking {
-        val latestVersions = Scrapper.getLatestVersions(JAVA, KOTLIN, SCALA, GO, RUBY, SWIFT)
+        val latestVersions = Scrapper.getLatestVersions(JAVA, KOTLIN, SCALA, GO, RUBY, SWIFT, DOTTY)
         
         assertThat(latestVersions.map { (k, v) -> k to v?.version })
                 .containsOnly(
@@ -76,6 +85,7 @@ class ScrapperTest {
                         GO to latestKnownVersions[GO],
                         RUBY to latestKnownVersions[RUBY],
                         SWIFT to latestKnownVersions[SWIFT],
+                        DOTTY to latestKnownVersions[DOTTY],
                 )
     }
 }

@@ -8,6 +8,7 @@ import org.margo.languagesradar.Language.*
 import org.margo.languagesradar.parsers.*
 import org.margo.languagesradar.parsers.github.DottyGithubParser
 import org.margo.languagesradar.parsers.github.GithubParser
+import org.margo.languagesradar.parsers.github.SwiftGithubParser
 
 suspend fun main() {
     val latestVersions = Scrapper.getLatestVersions(SCALA, JAVA, KOTLIN, GO, RUBY, SWIFT, DOTTY)
@@ -21,10 +22,11 @@ object Scrapper {
         SCALA to ScalaReleaseParser(),
         GO to GoReleaseParser(),
         RUBY to RubyReleaseParser(),
-        SWIFT to SwiftReleaseParser(),
     )
+
     private val gitHubParsers: Map<Language, GithubParser> = mapOf(
-        DOTTY to DottyGithubParser()
+        DOTTY to DottyGithubParser(),
+        SWIFT to SwiftGithubParser(),
     )
 
     suspend fun getLatestVersions(vararg langs: Language = Language.values()): Map<Language, Release?> {
@@ -50,6 +52,9 @@ object Scrapper {
         return htmlReleases.await() + githubReleases.await()
     }
 
+    fun invalidateCache() {
+        gitHubParsers.forEach { (_, value) -> value.invalidateCache()}
+    }
 
     private fun String.connect(): Document? {
         return try {

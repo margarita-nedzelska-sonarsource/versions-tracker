@@ -6,8 +6,19 @@ class DottyGithubParser : GithubParser {
     private val repoName = "lampepfl/dotty"
     private val versionRegex = Regex("\\d{1,2}\\.\\d{1,2}(\\.\\d{1,2})?")
 
-    override fun parse(): Release {
-        return GithubHelper.getReleases(repoName)
-            .firstOrNull { it.version.matches(versionRegex) } ?: Release.EMPTY_RELEASE
+    private var latest: Release? = null
+
+    override fun parse(): Release =
+        latest?: getLatest()
+
+    override fun invalidateCache() {
+        latest = null
+    }
+
+    private fun getLatest(): Release {
+        val release = GithubHelper.getReleases(repoName)
+        .firstOrNull { it.version.matches(versionRegex) } ?: Release.EMPTY_RELEASE
+        latest = release
+        return release
     }
 }

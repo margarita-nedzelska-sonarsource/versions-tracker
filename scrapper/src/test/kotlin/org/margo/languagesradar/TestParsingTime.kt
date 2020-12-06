@@ -12,32 +12,41 @@ class TestParsingTime {
         val javaTime = measureNanoTime {
             Scrapper.getLatestVersions(Language.JAVA)
         }
+        println("Java time  : $javaTime ns")
+
         val kotlinTime = measureNanoTime {
             Scrapper.getLatestVersions(Language.KOTLIN)
         }
+        println("Kotlin time: $kotlinTime ns")
+
         val scalaTime = measureNanoTime {
             Scrapper.getLatestVersions(Language.SCALA)
         }
+        println("Scala time : $scalaTime ns")
+
         val goTime = measureNanoTime {
             Scrapper.getLatestVersions(Language.GO)
         }
+        println("Go time    : $goTime ns")
+
         val rubyTime = measureNanoTime {
             Scrapper.getLatestVersions(Language.RUBY)
         }
+        println("Ruby time  : $rubyTime ns")
+
         val swiftTime = measureNanoTime {
             Scrapper.getLatestVersions(Language.SWIFT)
         }
+        println("Swift time : $swiftTime ns")
+
+        val dottyTime = measureNanoTime {
+            Scrapper.getLatestVersions(Language.DOTTY)
+        }
+        println("Dotty time : $dottyTime ns")
+
         val allTime = measureNanoTime {
             Scrapper.getLatestVersions()
         }
-
-        println("Java time  : $javaTime ns")
-        println("Kotlin time: $kotlinTime ns")
-        println("Scala time : $scalaTime ns")
-        println("Go time    : $goTime ns")
-        println("Ruby time  : $rubyTime ns")
-        println("Swift time : $swiftTime ns")
-
         println("All time   : $allTime ns")
 
         assertThat(allTime).isLessThan(javaTime + kotlinTime + scalaTime + goTime + rubyTime + swiftTime)

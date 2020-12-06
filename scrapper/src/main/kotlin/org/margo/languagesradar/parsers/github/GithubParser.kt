@@ -4,4 +4,6 @@ import org.margo.languagesradar.parsers.Release
 
 interface GithubParser {
     fun parse(): Release
+
+    fun invalidateCache()
 }

@@ -44,6 +44,11 @@ fun Application.main() {
             val result = call.parameters["langs"].getFullVersionsTable()
             call.respondHtml { toHtml(result) }
         }
+        get(path = "/invalidate") {
+            Scrapper.invalidateCache()
+            call.respondText("Cache invalidated!")
+        }
+
     }
 }
 

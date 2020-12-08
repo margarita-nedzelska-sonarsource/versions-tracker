@@ -1,7 +1,7 @@
 package org.margo.languagesradar.server.html
 
 import kotlinx.html.*
-import org.margo.languagesradar.server.data.ReleaseRecord
+import org.margo.languagesradar.data.ReleaseRecord
 
 fun HTML.toHtml(result: List<ReleaseRecord>) {
     head {

@@ -1,4 +1,4 @@
-package org.margo.languagesradar.server.data
+package org.margo.languagesradar.data
 
 import org.margo.languagesradar.Language
 

@@ -5,10 +5,12 @@ import kotlinx.coroutines.async
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.margo.languagesradar.Language.*
+import org.margo.languagesradar.data.ReleaseRecord
 import org.margo.languagesradar.parsers.*
 import org.margo.languagesradar.parsers.github.DottyGithubParser
 import org.margo.languagesradar.parsers.github.GithubParser
 import org.margo.languagesradar.parsers.github.SwiftGithubParser
+import java.util.*
 
 suspend fun main() {
     val latestVersions = Scrapper.getLatestVersions(SCALA, JAVA, KOTLIN, GO, RUBY, SWIFT, DOTTY)
@@ -67,5 +69,13 @@ object Scrapper {
     }
 }
 
+suspend fun String?.getLatestVersions() = this
+    ?.split(",")
+    ?.map { Language.valueOf(it.toUpperCase(Locale.ROOT)) }
+    .let { Scrapper.getLatestVersions(*it?.toTypedArray() ?: Language.values()) }
 
-
+suspend fun String?.getFullVersionsTable() = this.getLatestVersions()
+    .map { (lang, release) ->
+        ReleaseRecord(lang, Languages.supportedVersions[lang] ?: "",
+            release?.version ?: "", release?.notes?.getOrElse(0) { "" } ?: "")
+    }

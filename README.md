@@ -48,3 +48,14 @@ Use this project to monitor latest and supported versions of languages:
    <b>GET</b> <code>/invalidate</code>
    
    <i>Example</i>: <code>localhost:8080/invalidate</code>
+   
+   
+
+To deploy function in Google cloud ypu first need to run this command to copy fat jar in separate directory "deploy" <code>./gradlew buildFunction</code>. And then run (for this command you must be authorized in google cloud console)
+
+```
+ gcloud functions deploy releases-function \
+    --entry-point org.margo.languagesradar.function.ReleasesFunction \
+    --source=function/build/deploy --runtime java11 \
+    --memory 512MB --trigger-http --allow-unauthenticated
+```

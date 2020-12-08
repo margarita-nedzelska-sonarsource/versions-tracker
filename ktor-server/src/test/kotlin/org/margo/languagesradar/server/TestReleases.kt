@@ -1,93 +1,97 @@
 package org.margo.languagesradar.server
 
+import org.margo.languagesradar.Language.*
+import org.margo.languagesradar.Languages.latestKnownVersions
+import org.margo.languagesradar.Languages.supportedVersions
+
 val JAVA_RELEASE =
     """"JAVA" : {
-                        "version" : "15",
+                        "version" : "${latestKnownVersions[JAVA]}",
                         "notes" : [ "oracle.com/java/technologies/javase/15u-relnotes.html" ]
                       }"""
 
 val KOTLIN_RELEASE =
     """"KOTLIN" : {
-                        "version" : "1.4.20",
+                        "version" : "${latestKnownVersions[KOTLIN]}",
                         "notes" : [ "kotlinlang.org/releases.html" ]
                       }"""
 
 val SCALA_RELEASE =
     """"SCALA" : {
-                        "version" : "2.13.4",
+                        "version" : "${latestKnownVersions[SCALA]}",
                         "notes" : [ "github.com/scala/scala/releases/tag/v2.13.4" ]
                       }"""
 
 val GO_RELEASE =
     """"GO" : {
-                        "version" : "1.15",
+                        "version" : "${latestKnownVersions[GO]}",
                         "notes" : [ "golang.org/doc/go1.15" ]
                       }"""
 
 val RUBY_RELEASE =
     """"RUBY" : {
-                        "version" : "2.7.2",
+                        "version" : "${latestKnownVersions[RUBY]}",
                         "notes" : [ "www.ruby-lang.org/en/news/2020/10/02/ruby-2-7-2-released/" ]
                       }"""
 
 val SWIFT_RELEASE =
     """"SWIFT" : {
-                        "version" : "5.3.1",
+                        "version" : "${latestKnownVersions[SWIFT]}",
                         "notes" : [ "https://github.com/apple/swift/releases/tag/swift-5.3.1-RELEASE" ]
                       }"""
 
 val DOTTY_RELEASE =
     """"DOTTY" : {
-                        "version" : "0.26.0",
+                        "version" : "${latestKnownVersions[DOTTY]}",
                         "notes" : [ "https://github.com/lampepfl/dotty/releases/tag/0.26.0" ]
                       }"""
 
 val JAVA_RELEASE_RECORD =
     """{
   "language" : "JAVA",
-  "supportedVersion" : "14",
-  "latestVersion" : "15",
+  "supportedVersion" : "${supportedVersions[JAVA]}",
+  "latestVersion" : "${latestKnownVersions[JAVA]}",
   "latestReleaseNote" : "oracle.com/java/technologies/javase/15u-relnotes.html"
 }"""
 
 val KOTLIN_RELEASE_RECORD = """{
   "language" : "KOTLIN",
-  "supportedVersion" : "1.4",
-  "latestVersion" : "1.4.20",
+  "supportedVersion" : "${supportedVersions[KOTLIN]}",
+  "latestVersion" : "${latestKnownVersions[KOTLIN]}",
   "latestReleaseNote" : "kotlinlang.org/releases.html"
 }"""
 
 val SCALA_RELEASE_RECORD = """{
   "language" : "SCALA",
-  "supportedVersion" : "2.13",
-  "latestVersion" : "2.13.4",
+  "supportedVersion" : "${supportedVersions[SCALA]}",
+  "latestVersion" : "${latestKnownVersions[SCALA]}",
   "latestReleaseNote" : "github.com/scala/scala/releases/tag/v2.13.4"
 }"""
 
 val GO_RELEASE_RECORD = """{
   "language" : "GO",
-  "supportedVersion" : "1.15",
-  "latestVersion" : "1.15",
+  "supportedVersion" : "${supportedVersions[GO]}",
+  "latestVersion" : "${latestKnownVersions[GO]}",
   "latestReleaseNote" : "golang.org/doc/go1.15"
 }"""
 
 val RUBY_RELEASE_RECORD = """{
   "language" : "RUBY",
-  "supportedVersion" : "2.7",
-  "latestVersion" : "2.7.2",
+  "supportedVersion" : "${supportedVersions[RUBY]}",
+  "latestVersion" : "${latestKnownVersions[RUBY]}",
   "latestReleaseNote" : "www.ruby-lang.org/en/news/2020/10/02/ruby-2-7-2-released/"
 }"""
 
 val SWIFT_RELEASE_RECORD = """{
   "language" : "SWIFT",
-  "supportedVersion" : "5.3",
-  "latestVersion" : "5.3.1",
+  "supportedVersion" : "${supportedVersions[SWIFT]}",
+  "latestVersion" : "${latestKnownVersions[SWIFT]}",
   "latestReleaseNote" : "https://github.com/apple/swift/releases/tag/swift-5.3.1-RELEASE"
 }"""
 
 val DOTTY_RELEASE_RECORD = """{
   "language" : "DOTTY",
-  "supportedVersion" : "0.26.0",
-  "latestVersion" : "0.26.0",
+  "supportedVersion" : "${supportedVersions[DOTTY]}",
+  "latestVersion" : "${latestKnownVersions[DOTTY]}",
   "latestReleaseNote" : "https://github.com/lampepfl/dotty/releases/tag/0.26.0"
 }"""

@@ -59,3 +59,7 @@ Use this project to monitor latest and supported versions of languages:
     --source=function/build/deploy --runtime java11 \
     --memory 512MB --trigger-http --allow-unauthenticated
 ```
+
+To run function locally run this command:
+
+```./gradlew runFunction -PrunFunction.target=com.example.versions.function.ReleasesFunction```

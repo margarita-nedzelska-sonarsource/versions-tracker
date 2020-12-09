@@ -1,9 +1,9 @@
-package com.example.versions.server.html
+package com.example.versions.html
 
 import com.example.versions.data.ReleaseRecord
 import kotlinx.html.*
 
-fun HTML.toHtml(result: List<ReleaseRecord>) {
+public fun HTML.toHtml(result: List<ReleaseRecord>) {
     head {
         title {
             +"Versions"

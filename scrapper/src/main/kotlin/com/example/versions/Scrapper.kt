@@ -36,9 +36,9 @@ object Scrapper {
             langs
                 .filter(parsers::containsKey)
                 .map {
-                val url = Languages.releasesUrl[it]
-                it to async { parsers[it]?.parse(url?.connect()) }
-            }
+                    val url = Languages.releasesUrl[it]
+                    it to async { parsers[it]?.parse(url?.connect()) }
+                }
                 .map { (lang, deferred) -> lang to deferred.await() }
                 .toMap()
         }
@@ -46,8 +46,8 @@ object Scrapper {
             langs
                 .filter(gitHubParsers::containsKey)
                 .map {
-                it to async { gitHubParsers[it]?.parse() }
-            }
+                    it to async { gitHubParsers[it]?.parse() }
+                }
                 .map { (lang, deferred) -> lang to deferred.await() }
                 .toMap()
         }
@@ -55,7 +55,7 @@ object Scrapper {
     }
 
     fun invalidateCache() {
-        gitHubParsers.forEach { (_, value) -> value.invalidateCache()}
+        gitHubParsers.forEach { (_, value) -> value.invalidateCache() }
     }
 
     private fun String.connect(): Document? {
@@ -71,7 +71,9 @@ object Scrapper {
 
 suspend fun String?.getLatestVersions() = this
     ?.split(",")
-    ?.map { valueOf(it.toUpperCase(Locale.ROOT)) }
+    ?.map {it.toUpperCase(Locale.ROOT)}
+    ?.filter { Language.values().map(Language::name).contains(it) }
+    ?.map { valueOf(it) }
     .let { Scrapper.getLatestVersions(*it?.toTypedArray() ?: values()) }
 
 suspend fun String?.getFullVersionsTable() = this.getLatestVersions()

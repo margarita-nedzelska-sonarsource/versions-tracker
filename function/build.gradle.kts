@@ -10,6 +10,7 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 val invoker by configurations.creating
@@ -20,6 +21,8 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
     implementation(kotlin("stdlib-jdk8"))
     implementation(project(":scrapper"))
+    implementation(project(":html-extender"))
+    implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.2")
     implementation("com.google.code.gson:gson:2.8.6")
 
     testImplementation(platform("org.junit:junit-bom:5.7.0"))

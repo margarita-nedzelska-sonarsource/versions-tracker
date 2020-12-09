@@ -24,8 +24,9 @@ dependencies {
     implementation("io.ktor:ktor-server-netty:1.4.0")
     implementation("io.ktor:ktor-jackson:1.4.0")
     implementation("io.ktor:ktor-html-builder:1.4.3")
-    
+
     implementation(project(":scrapper"))
+    implementation(project(":html-extender"))
     testImplementation(platform("org.junit:junit-bom:5.7.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("com.willowtreeapps.assertk:assertk:0.23")

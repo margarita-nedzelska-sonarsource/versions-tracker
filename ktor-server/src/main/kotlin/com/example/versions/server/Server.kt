@@ -3,7 +3,7 @@ package com.example.versions.server
 import com.example.versions.Scrapper
 import com.example.versions.getFullVersionsTable
 import com.example.versions.getLatestVersions
-import com.example.versions.server.html.toHtml
+import com.example.versions.html.toHtml
 import com.fasterxml.jackson.databind.SerializationFeature
 import io.ktor.application.*
 import io.ktor.features.*

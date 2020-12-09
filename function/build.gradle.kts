@@ -5,7 +5,7 @@ plugins {
     application
 }
 
-group = "com.margo.versionsradar"
+group = "com.example.versions"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -27,8 +27,8 @@ dependencies {
 }
 
 application {
-    mainClass.set("org.margo.languagesradar.function.ReleasesFunctionKt")
-    mainClassName = "org.margo.languagesradar.function.ReleasesFunctionKt"
+    mainClass.set("com.example.versions.function.ReleasesFunctionKt")
+    mainClassName = "com.example.versions.function.ReleasesFunctionKt" // used by gc function
 }
 
 tasks.register<JavaExec>("runFunction") {

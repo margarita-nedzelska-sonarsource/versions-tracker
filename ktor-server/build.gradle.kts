@@ -5,7 +5,7 @@ plugins {
     application
 }
 
-group = "com.margo.versionsradar"
+group = "com.example.versions"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -33,7 +33,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("org.margo.languagesradar.server.ServerKt")
+    mainClass.set("com.example.versions.server.ServerKt")
 }
 
 tasks.test {

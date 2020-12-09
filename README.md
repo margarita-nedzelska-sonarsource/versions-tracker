@@ -51,11 +51,11 @@ Use this project to monitor latest and supported versions of languages:
    
    
 
-To deploy function in Google cloud ypu first need to run this command to copy fat jar in separate directory "deploy" <code>./gradlew buildFunction</code>. And then run (for this command you must be authorized in google cloud console)
+<b>To deploy function in Google cloud you first need to run command <code>./gradlew buildFunction</code> to copy fat jar into separate directory "deploy". And then run (for this command you must be authorized in google cloud console)</b>
 
 ```
  gcloud functions deploy releases-function \
-    --entry-point org.margo.languagesradar.function.ReleasesFunction \
+    --entry-point com.example.versions.function.ReleasesFunction \
     --source=function/build/deploy --runtime java11 \
     --memory 512MB --trigger-http --allow-unauthenticated
 ```

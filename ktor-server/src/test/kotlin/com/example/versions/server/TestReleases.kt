@@ -38,7 +38,7 @@ val RUBY_RELEASE =
 val SWIFT_RELEASE =
     """"SWIFT" : {
                         "version" : "${latestKnownVersions[SWIFT]}",
-                        "notes" : [ "https://github.com/apple/swift/releases/tag/swift-5.3.1-RELEASE" ]
+                        "notes" : [ "https://github.com/apple/swift/releases/tag/swift-5.3.2-RELEASE" ]
                       }"""
 
 val DOTTY_RELEASE =
@@ -87,7 +87,7 @@ val SWIFT_RELEASE_RECORD = """{
   "language" : "SWIFT",
   "supportedVersion" : "${supportedVersions[SWIFT]}",
   "latestVersion" : "${latestKnownVersions[SWIFT]}",
-  "latestReleaseNote" : "https://github.com/apple/swift/releases/tag/swift-5.3.1-RELEASE"
+  "latestReleaseNote" : "https://github.com/apple/swift/releases/tag/swift-5.3.2-RELEASE"
 }"""
 
 val DOTTY_RELEASE_RECORD = """{

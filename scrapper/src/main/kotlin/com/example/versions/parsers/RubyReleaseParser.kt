@@ -7,12 +7,13 @@ class RubyReleaseParser : ReleaseParser {
     companion object {
         const val BASE_URL = "www.ruby-lang.org"
         const val RELEASE_VERSION = "Ruby\\s(\\d{1,2}\\.\\d{1,2}\\.\\d{1,2})"
+        private val STOP_LIST = listOf("-preview", "-rc", "-p")
     }
 
     override fun parse(document: Document?): Release =
         document?.let {
             val element = document.select("tr:matches($RELEASE_VERSION)")
-                    .first { el -> !el.text().contains("-preview") }
+                    .first { el -> !(STOP_LIST.any { el.text().contains(it) })}
             val name = element.getElementsByTag("td").first()
             val a = element.getElementsByTag("a").first()
             Release(name.getVersion(), listOf(a.getHref()))

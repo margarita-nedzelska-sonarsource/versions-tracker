@@ -1,6 +1,5 @@
 package com.example.versions.server
 
-import com.example.versions.Language
 import com.example.versions.Language.*
 import com.example.versions.Languages.latestKnownVersions
 import com.example.versions.Languages.supportedVersions
@@ -32,7 +31,7 @@ val GO_RELEASE =
 val RUBY_RELEASE =
     """"RUBY" : {
                         "version" : "${latestKnownVersions[RUBY]}",
-                        "notes" : [ "www.ruby-lang.org/en/news/2020/10/02/ruby-2-7-2-released/" ]
+                        "notes" : [ "www.ruby-lang.org/en/news/2020/12/25/ruby-3-0-0-released/" ]
                       }"""
 
 val SWIFT_RELEASE =
@@ -80,7 +79,7 @@ val RUBY_RELEASE_RECORD = """{
   "language" : "RUBY",
   "supportedVersion" : "${supportedVersions[RUBY]}",
   "latestVersion" : "${latestKnownVersions[RUBY]}",
-  "latestReleaseNote" : "www.ruby-lang.org/en/news/2020/10/02/ruby-2-7-2-released/"
+  "latestReleaseNote" : "www.ruby-lang.org/en/news/2020/12/25/ruby-3-0-0-released/"
 }"""
 
 val SWIFT_RELEASE_RECORD = """{

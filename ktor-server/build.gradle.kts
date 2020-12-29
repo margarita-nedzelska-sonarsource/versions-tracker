@@ -1,15 +1,9 @@
 plugins {
-    java
-    kotlin("jvm") version "1.4.10"
     jacoco
     application
 }
 
-group = "com.example.versions"
-version = "1.0-SNAPSHOT"
-
 repositories {
-    mavenCentral()
     jcenter()
 }
 

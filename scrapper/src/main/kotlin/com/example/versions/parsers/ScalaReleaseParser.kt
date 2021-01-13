@@ -1,5 +1,7 @@
 package com.example.versions.parsers
 
+import com.example.versions.Language
+import com.example.versions.Languages
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
 
@@ -11,11 +13,13 @@ class ScalaReleaseParser : ReleaseParser {
 
     override fun parse(document: Document?): Release =
         document?.let {
-            val element = it.body().getElementsByClass("release-header").first()
-            val a = element.getElementsByTag("a").first()
-            Release(a.getVersion(), listOf(a.getHref()))
+            val element = it.body()
+                    .getElementsByClass("release-header")
+                    .flatMap { el -> el.getElementsByTag("a")  }
+                    .filter { el -> el.getVersion() >= Languages.latestKnownVersions[Language.SCALA]!! }
+                    .first()
+            Release(element.getVersion(), listOf(element.getHref()))
         } ?: Release.EMPTY_RELEASE
-    
     
     private fun Element?.getVersion(): String =
             this?.let {

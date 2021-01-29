@@ -60,7 +60,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(SWIFT)
         
         assertThat(latestVersions).containsOnly(
-                SWIFT to Release(latestKnownVersions[SWIFT]!!, listOf("https://github.com/apple/swift/releases/tag/swift-5.3.2-RELEASE"))
+                SWIFT to Release(latestKnownVersions[SWIFT]!!, listOf("https://github.com/apple/swift/releases/tag/swift-5.3.3-RELEASE"))
         )
     }
     

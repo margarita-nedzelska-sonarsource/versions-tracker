@@ -3,7 +3,7 @@ package com.example.versions.html
 import com.example.versions.data.ReleaseRecord
 import kotlinx.html.*
 
-public fun HTML.toHtml(result: List<ReleaseRecord>) {
+fun HTML.toHtml(result: List<ReleaseRecord>) {
     head {
         title {
             +"Versions"

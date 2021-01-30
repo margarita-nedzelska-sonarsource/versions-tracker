@@ -19,30 +19,32 @@ fun main() {
 
 class ReleasesFunction : HttpFunction {
     private val gson = Gson()
+
     @Throws(IOException::class)
-    override fun service(request: HttpRequest, response: HttpResponse) = runBlocking {
-        when (request.path) {
-            "/latest" -> {
-                val latestVersions = request.queryParameters["langs"]?.first().getLatestVersions()
-                response.setContentType("application/json")
-                response.writer.write(gson.toJson(latestVersions))
+    override fun service(request: HttpRequest, response: HttpResponse) {
+        runBlocking {
+            when (request.path) {
+                "/latest" -> {
+                    val latestVersions = request.queryParameters["langs"]?.first().getLatestVersions()
+                    response.setContentType("application/json")
+                    response.writer.write(gson.toJson(latestVersions))
+                }
+                "/versions" -> {
+                    val latestVersions = request.queryParameters["langs"]?.first().getFullVersionsTable()
+                    response.setContentType("application/json")
+                    response.writer.write(gson.toJson(latestVersions))
+                }
+                "/view/versions" -> {
+                    response.setContentType("text/html")
+                    val latestVersions = request.queryParameters["langs"]?.first().getFullVersionsTable()
+                    response.writer.appendHTML().html { toHtml(latestVersions) }
+                }
+                "/invalidate" -> {
+                    Scrapper.invalidateCache()
+                    response.writer.write("Cache cleared!")
+                }
+                else -> response.writer.write("Hello World!")
             }
-            "/versions" -> {
-                val latestVersions = request.queryParameters["langs"]?.first().getFullVersionsTable()
-                response.setContentType("application/json")
-                response.writer.write(gson.toJson(latestVersions))
-            }
-            "/view/versions" -> {
-                response.setContentType("text/html")
-                val latestVersions = request.queryParameters["langs"]?.first().getFullVersionsTable()
-                response.writer.appendHTML().html { toHtml(latestVersions) }
-            }
-            "/invalidate" -> {
-                Scrapper.invalidateCache()
-                response.writer.write("Cache cleared!")
-            }
-            else -> response.writer.write("Hello World!")
         }
-        return@runBlocking
     }
 }

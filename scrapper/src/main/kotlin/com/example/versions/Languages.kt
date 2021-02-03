@@ -26,7 +26,7 @@ object Languages {
 
     val latestKnownVersions: Map<Language, String> = mapOf(
         Language.JAVA to "15",
-        Language.KOTLIN to "1.4.21",
+        Language.KOTLIN to "1.4.30",
         Language.SCALA to "2.13.4",
         Language.GO to "1.15",
         Language.RUBY to "3.0.0",

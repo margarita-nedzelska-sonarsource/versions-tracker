@@ -67,6 +67,71 @@ class AppServerTest {
     }
 
     @Test
+    fun testRubyVersion() {
+        withTestApplication(Application::main) {
+            with(handleRequest(HttpMethod.Get, "/latest?langs=Ruby")) {
+                assertEquals(HttpStatusCode.OK, response.status())
+                assertEquals(
+                    """
+                    {
+                      $RUBY_RELEASE
+                    }
+                """.trimIndent(), response.content
+                )
+            }
+        }
+    }
+
+    @Test
+    fun testGoVersion() {
+        withTestApplication(Application::main) {
+            with(handleRequest(HttpMethod.Get, "/latest?langs=Go")) {
+                assertEquals(HttpStatusCode.OK, response.status())
+                assertEquals(
+                    """
+                    {
+                      $GO_RELEASE
+                    }
+                """.trimIndent(), response.content
+                )
+            }
+        }
+    }
+
+
+    @Test
+    fun testSwiftVersion() {
+        withTestApplication(Application::main) {
+            with(handleRequest(HttpMethod.Get, "/latest?langs=Swift")) {
+                assertEquals(HttpStatusCode.OK, response.status())
+                assertEquals(
+                    """
+                    {
+                      $SWIFT_RELEASE
+                    }
+                """.trimIndent(), response.content
+                )
+            }
+        }
+    }
+
+    @Test
+    fun testDottyVersion() {
+        withTestApplication(Application::main) {
+            with(handleRequest(HttpMethod.Get, "/latest?langs=Dotty")) {
+                assertEquals(HttpStatusCode.OK, response.status())
+                assertEquals(
+                    """
+                    {
+                      $DOTTY_RELEASE
+                    }
+                """.trimIndent(), response.content
+                )
+            }
+        }
+    }
+
+    @Test
     fun testAllLatestVersions() {
         withTestApplication(Application::main) {
             with(handleRequest(HttpMethod.Get, "/latest")) {

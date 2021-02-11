@@ -5,6 +5,7 @@ import com.example.versions.data.ReleaseRecord
 import com.example.versions.parsers.*
 import com.example.versions.parsers.github.DottyGithubParser
 import com.example.versions.parsers.github.GithubParser
+import com.example.versions.parsers.github.KotlinGithubParser
 import com.example.versions.parsers.github.SwiftGithubParser
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
@@ -20,7 +21,7 @@ suspend fun main() {
 object Scrapper {
     private val parsers: Map<Language, ReleaseParser> = mapOf(
         JAVA to JavaReleaseParser(),
-        KOTLIN to KotlinReleaseParser(),
+        //KOTLIN to KotlinReleaseParser(),
         SCALA to ScalaReleaseParser(),
         GO to GoReleaseParser(),
         RUBY to RubyReleaseParser(),
@@ -29,6 +30,7 @@ object Scrapper {
     private val gitHubParsers: Map<Language, GithubParser> = mapOf(
         DOTTY to DottyGithubParser(),
         SWIFT to SwiftGithubParser(),
+        KOTLIN to KotlinGithubParser(),
     )
 
     suspend fun getLatestVersions(vararg langs: Language = values()): Map<Language, Release?> {

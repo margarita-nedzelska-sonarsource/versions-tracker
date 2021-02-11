@@ -75,10 +75,10 @@ class AppServerTest {
                     """
                     {
                       $JAVA_RELEASE,
-                      $KOTLIN_RELEASE,
                       $SCALA_RELEASE,
                       $GO_RELEASE,
                       $RUBY_RELEASE,
+                      $KOTLIN_RELEASE,
                       $SWIFT_RELEASE,
                       $DOTTY_RELEASE
                     }
@@ -94,7 +94,7 @@ class AppServerTest {
             with(handleRequest(HttpMethod.Get, "/versions")) {
                 assertEquals(HttpStatusCode.OK, response.status())
                 assertEquals(
-                    """[ $JAVA_RELEASE_RECORD, $KOTLIN_RELEASE_RECORD, $SCALA_RELEASE_RECORD, $GO_RELEASE_RECORD, $RUBY_RELEASE_RECORD, $SWIFT_RELEASE_RECORD, $DOTTY_RELEASE_RECORD ]"""
+                    """[ $JAVA_RELEASE_RECORD, $SCALA_RELEASE_RECORD, $GO_RELEASE_RECORD, $RUBY_RELEASE_RECORD, $KOTLIN_RELEASE_RECORD, $SWIFT_RELEASE_RECORD, $DOTTY_RELEASE_RECORD ]"""
                         .trimIndent(), response.content
                 )
             }

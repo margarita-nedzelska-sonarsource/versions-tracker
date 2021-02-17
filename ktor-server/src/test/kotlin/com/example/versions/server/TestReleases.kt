@@ -25,7 +25,7 @@ val SCALA_RELEASE =
 val GO_RELEASE =
     """"GO" : {
                         "version" : "${latestKnownVersions[GO]}",
-                        "notes" : [ "golang.org/doc/go1.15" ]
+                        "notes" : [ "golang.org/doc/go1.16" ]
                       }"""
 
 val RUBY_RELEASE =
@@ -72,7 +72,7 @@ val GO_RELEASE_RECORD = """{
   "language" : "GO",
   "supportedVersion" : "${supportedVersions[GO]}",
   "latestVersion" : "${latestKnownVersions[GO]}",
-  "latestReleaseNote" : "golang.org/doc/go1.15"
+  "latestReleaseNote" : "golang.org/doc/go1.16"
 }"""
 
 val RUBY_RELEASE_RECORD = """{

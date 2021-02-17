@@ -28,7 +28,7 @@ object Languages {
         Language.JAVA to "15",
         Language.KOTLIN to "1.4.30",
         Language.SCALA to "2.13.4",
-        Language.GO to "1.15",
+        Language.GO to "1.16",
         Language.RUBY to "3.0.0",
         Language.APEX to "50",
         Language.SWIFT to "5.3.3",

@@ -19,7 +19,7 @@ val KOTLIN_RELEASE =
 val SCALA_RELEASE =
     """"SCALA" : {
                         "version" : "${latestKnownVersions[SCALA]}",
-                        "notes" : [ "github.com/scala/scala/releases/tag/v2.13.4" ]
+                        "notes" : [ "github.com/scala/scala/releases/tag/v2.13.5" ]
                       }"""
 
 val GO_RELEASE =
@@ -65,7 +65,7 @@ val SCALA_RELEASE_RECORD = """{
   "language" : "SCALA",
   "supportedVersion" : "${supportedVersions[SCALA]}",
   "latestVersion" : "${latestKnownVersions[SCALA]}",
-  "latestReleaseNote" : "github.com/scala/scala/releases/tag/v2.13.4"
+  "latestReleaseNote" : "github.com/scala/scala/releases/tag/v2.13.5"
 }"""
 
 val GO_RELEASE_RECORD = """{

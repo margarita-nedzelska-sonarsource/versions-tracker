@@ -33,7 +33,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(SCALA)
         
         assertThat(latestVersions).containsOnly(
-                SCALA to Release(latestKnownVersions[SCALA]!!, listOf("github.com/scala/scala/releases/tag/v2.13.4"))
+                SCALA to Release(latestKnownVersions[SCALA]!!, listOf("github.com/scala/scala/releases/tag/v2.13.5"))
         )
     }
 

@@ -4,10 +4,8 @@
 name: Check
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  schedule:
+    - cron: '0 0/6 * * *'
 
 jobs:
   build:
@@ -25,4 +23,4 @@ jobs:
     - name: Build with Gradle
       env:
         GITHUB_TOKEN: ${{ secrets.GTOKEN }}
-      run: ./gradlew build
+      run: ./gradlew scrapper:test --tests com.example.versions.ScrapperTest

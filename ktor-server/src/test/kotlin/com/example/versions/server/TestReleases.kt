@@ -13,7 +13,7 @@ val JAVA_RELEASE =
 val KOTLIN_RELEASE =
     """"KOTLIN" : {
                         "version" : "${latestKnownVersions[KOTLIN]}",
-                        "notes" : [ "https://github.com/JetBrains/kotlin/releases/tag/v1.4.30" ]
+                        "notes" : [ "https://github.com/JetBrains/kotlin/releases/tag/v1.4.31" ]
                       }"""
 
 val SCALA_RELEASE =
@@ -58,7 +58,7 @@ val KOTLIN_RELEASE_RECORD = """{
   "language" : "KOTLIN",
   "supportedVersion" : "${supportedVersions[KOTLIN]}",
   "latestVersion" : "${latestKnownVersions[KOTLIN]}",
-  "latestReleaseNote" : "https://github.com/JetBrains/kotlin/releases/tag/v1.4.30"
+  "latestReleaseNote" : "https://github.com/JetBrains/kotlin/releases/tag/v1.4.31"
 }"""
 
 val SCALA_RELEASE_RECORD = """{

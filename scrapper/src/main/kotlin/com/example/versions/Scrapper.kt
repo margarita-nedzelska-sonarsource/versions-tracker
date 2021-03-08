@@ -21,13 +21,14 @@ object Scrapper {
         SCALA to ScalaReleaseParser(),
         GO to GoReleaseParser(),
         RUBY to RubyReleaseParser(),
+        JDT to JDTReleaseParser(),
     )
 
     private val GIT_HUB_PARSERS: Map<Project, GithubParser> = mapOf(
         DOTTY to DottyGithubParser(),
         SWIFT to SwiftGithubParser(),
         KOTLIN to KotlinGithubParser(),
-        SCALA_META to ScalaMetaGithubParser()
+        SCALA_META to ScalaMetaGithubParser(),
     )
 
     suspend fun getLatestVersions(vararg langs: Project = values()): Map<Project, Release?> {

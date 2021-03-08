@@ -4,7 +4,6 @@ import assertk.assertThat
 import assertk.assertions.containsOnly
 import com.example.versions.Project.*
 import com.example.versions.Languages.LATEST_KNOWN_VERSIONS
-import com.example.versions.Languages.RELEASES_URL
 import com.example.versions.parsers.Release
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
@@ -79,13 +78,22 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(SCALA_META)
 
         assertThat(latestVersions).containsOnly(
-            SCALA_META to Release(LATEST_KNOWN_VERSIONS[SCALA_META]!!, listOf(RELEASES_URL[SCALA_META]!!))
+            SCALA_META to Release(LATEST_KNOWN_VERSIONS[SCALA_META]!!, listOf("https://github.com/scalameta/scalameta/releases/tag/v4.4.10"))
+        )
+    }
+
+    @Test
+    fun testEclipseJDTLatestRelease() = runBlocking {
+        val latestVersions = Scrapper.getLatestVersions(JDT)
+
+        assertThat(latestVersions).containsOnly(
+            JDT to Release(LATEST_KNOWN_VERSIONS[JDT]!!, listOf("https://git.eclipse.org/r/plugins/gitiles/jdt/eclipse.jdt.core/+/refs/tags/R4_18"))
         )
     }
 
     @Test
     fun testAllLatestVersions() = runBlocking {
-        val latestVersions = Scrapper.getLatestVersions(JAVA, KOTLIN, SCALA, GO, RUBY, SWIFT, DOTTY)
+        val latestVersions = Scrapper.getLatestVersions(JAVA, KOTLIN, SCALA, GO, RUBY, SWIFT, DOTTY, SCALA_META, JDT)
         
         assertThat(latestVersions.map { (k, v) -> k to v?.version })
                 .containsOnly(
@@ -96,6 +104,8 @@ class ScrapperTest {
                         RUBY to LATEST_KNOWN_VERSIONS[RUBY],
                         SWIFT to LATEST_KNOWN_VERSIONS[SWIFT],
                         DOTTY to LATEST_KNOWN_VERSIONS[DOTTY],
+                        SCALA_META to LATEST_KNOWN_VERSIONS[SCALA_META],
+                        JDT to LATEST_KNOWN_VERSIONS[JDT],
                 )
     }
 }

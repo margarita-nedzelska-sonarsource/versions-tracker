@@ -52,6 +52,12 @@ val SCALA_META_RELEASE =
                         "notes" : [ "https://github.com/scalameta/scalameta/releases/tag/v4.4.10" ]
                       }"""
 
+val JDT_RELEASE =
+    """"JDT" : {
+                        "version" : "${LATEST_KNOWN_VERSIONS[JDT]}",
+                        "notes" : [ "https://git.eclipse.org/r/plugins/gitiles/jdt/eclipse.jdt.core/+/refs/tags/R4_18" ]
+                      }"""
+
 val JAVA_RELEASE_RECORD =
     """{
   "project" : "JAVA",
@@ -107,4 +113,11 @@ val SCALA_META_RELEASE_RECORD = """{
   "supportedVersion" : "${SUPPORTED_VERSIONS[SCALA_META]}",
   "latestVersion" : "${LATEST_KNOWN_VERSIONS[SCALA_META]}",
   "latestReleaseNote" : "https://github.com/scalameta/scalameta/releases/tag/v4.4.10"
+}"""
+
+val JDT_RELEASE_RECORD = """{
+  "project" : "JDT",
+  "supportedVersion" : "${SUPPORTED_VERSIONS[JDT]}",
+  "latestVersion" : "${LATEST_KNOWN_VERSIONS[JDT]}",
+  "latestReleaseNote" : "https://git.eclipse.org/r/plugins/gitiles/jdt/eclipse.jdt.core/+/refs/tags/R4_18"
 }"""

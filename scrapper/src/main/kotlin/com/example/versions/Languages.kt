@@ -11,7 +11,7 @@ object Languages {
         Project.APEX to "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_intro_what_is_apex.htm",
         Project.SWIFT to "https://swift.org/download/#releases",
         Project.DOTTY to "https://github.com/lampepfl/dotty/releases",
-        Project.SCALA_META to "https://github.com/scalameta/scalameta/releases/tag/v4.4.10"
+        Project.JDT to "https://git.eclipse.org/r/plugins/gitiles/jdt/eclipse.jdt.core/+refs",
     )
     
     val SUPPORTED_VERSIONS: Map<Project, String> = mapOf(
@@ -23,7 +23,8 @@ object Languages {
         Project.APEX to "50",
         Project.SWIFT to "5.3",
         Project.DOTTY to "0.26.0",
-        Project.SCALA_META to "4.3.24"
+        Project.SCALA_META to "4.3.24",
+        Project.JDT to "4.18",
     )
 
     val LATEST_KNOWN_VERSIONS: Map<Project, String> = mapOf(
@@ -35,7 +36,8 @@ object Languages {
         Project.APEX to "50",
         Project.SWIFT to "5.3.3",
         Project.DOTTY to "0.26.0",
-        Project.SCALA_META to "4.4.10"
+        Project.SCALA_META to "4.4.10",
+        Project.JDT to "4.18",
     )
     
 }
@@ -49,5 +51,6 @@ enum class Project {
     APEX,
     SWIFT,
     DOTTY,
-    SCALA_META
+    SCALA_META,
+    JDT,
 }

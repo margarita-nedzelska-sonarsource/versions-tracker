@@ -1,10 +1,10 @@
 package com.example.versions.data
 
-import com.example.versions.Language
+import com.example.versions.Project
 
 data class ReleaseRecord (
-        val language: Language,
-        val supportedVersion: String,
-        val latestVersion: String,
-        val latestReleaseNote: String
+    val project: Project,
+    val supportedVersion: String,
+    val latestVersion: String,
+    val latestReleaseNote: String
 )

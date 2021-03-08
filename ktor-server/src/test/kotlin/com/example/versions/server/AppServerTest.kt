@@ -132,6 +132,22 @@ class AppServerTest {
     }
 
     @Test
+    fun testScalametaVersion() {
+        withTestApplication(Application::main) {
+            with(handleRequest(HttpMethod.Get, "/latest?langs=Scala_Meta")) {
+                assertEquals(HttpStatusCode.OK, response.status())
+                assertEquals(
+                    """
+                    {
+                      $SCALA_META_RELEASE
+                    }
+                """.trimIndent(), response.content
+                )
+            }
+        }
+    }
+
+    @Test
     fun testAllLatestVersions() {
         withTestApplication(Application::main) {
             with(handleRequest(HttpMethod.Get, "/latest")) {
@@ -145,7 +161,8 @@ class AppServerTest {
                       $RUBY_RELEASE,
                       $KOTLIN_RELEASE,
                       $SWIFT_RELEASE,
-                      $DOTTY_RELEASE
+                      $DOTTY_RELEASE,
+                      $SCALA_META_RELEASE
                     }
                 """.trimIndent(), response.content
                 )
@@ -159,7 +176,7 @@ class AppServerTest {
             with(handleRequest(HttpMethod.Get, "/versions")) {
                 assertEquals(HttpStatusCode.OK, response.status())
                 assertEquals(
-                    """[ $JAVA_RELEASE_RECORD, $SCALA_RELEASE_RECORD, $GO_RELEASE_RECORD, $RUBY_RELEASE_RECORD, $KOTLIN_RELEASE_RECORD, $SWIFT_RELEASE_RECORD, $DOTTY_RELEASE_RECORD ]"""
+                    """[ $JAVA_RELEASE_RECORD, $SCALA_RELEASE_RECORD, $GO_RELEASE_RECORD, $RUBY_RELEASE_RECORD, $KOTLIN_RELEASE_RECORD, $SWIFT_RELEASE_RECORD, $DOTTY_RELEASE_RECORD, $SCALA_META_RELEASE_RECORD ]"""
                         .trimIndent(), response.content
                 )
             }

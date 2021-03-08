@@ -55,7 +55,7 @@ fun TABLE.releaseHeader() {
 fun TABLE.releaseRow(record: ReleaseRecord) {
     tr {
         td {
-            text("${record.language}")
+            text("${record.project}")
         }
         td {
             text(record.supportedVersion)

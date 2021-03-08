@@ -1,6 +1,6 @@
 package com.example.versions.parsers
 
-import com.example.versions.Language
+import com.example.versions.Project
 import com.example.versions.Languages
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
@@ -16,7 +16,7 @@ class ScalaReleaseParser : ReleaseParser {
             val element = it.body()
                     .getElementsByClass("release-header")
                     .flatMap { el -> el.getElementsByTag("a")  }
-                    .filter { el -> el.getVersion() >= Languages.latestKnownVersions[Language.SCALA]!! }
+                    .filter { el -> el.getVersion() >= Languages.LATEST_KNOWN_VERSIONS[Project.SCALA]!! }
                     .first()
             Release(element.getVersion(), listOf(element.getHref()))
         } ?: Release.EMPTY_RELEASE

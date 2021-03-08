@@ -10,37 +10,37 @@ class TestParsingTime {
     @Test
     fun testAllLatestVersions() = runBlocking {
         val javaTime = measureNanoTime {
-            Scrapper.getLatestVersions(Language.JAVA)
+            Scrapper.getLatestVersions(Project.JAVA)
         }
         println("Java time  : $javaTime ns")
 
         val kotlinTime = measureNanoTime {
-            Scrapper.getLatestVersions(Language.KOTLIN)
+            Scrapper.getLatestVersions(Project.KOTLIN)
         }
         println("Kotlin time: $kotlinTime ns")
 
         val scalaTime = measureNanoTime {
-            Scrapper.getLatestVersions(Language.SCALA)
+            Scrapper.getLatestVersions(Project.SCALA)
         }
         println("Scala time : $scalaTime ns")
 
         val goTime = measureNanoTime {
-            Scrapper.getLatestVersions(Language.GO)
+            Scrapper.getLatestVersions(Project.GO)
         }
         println("Go time    : $goTime ns")
 
         val rubyTime = measureNanoTime {
-            Scrapper.getLatestVersions(Language.RUBY)
+            Scrapper.getLatestVersions(Project.RUBY)
         }
         println("Ruby time  : $rubyTime ns")
 
         val swiftTime = measureNanoTime {
-            Scrapper.getLatestVersions(Language.SWIFT)
+            Scrapper.getLatestVersions(Project.SWIFT)
         }
         println("Swift time : $swiftTime ns")
 
         val dottyTime = measureNanoTime {
-            Scrapper.getLatestVersions(Language.DOTTY)
+            Scrapper.getLatestVersions(Project.DOTTY)
         }
         println("Dotty time : $dottyTime ns")
 

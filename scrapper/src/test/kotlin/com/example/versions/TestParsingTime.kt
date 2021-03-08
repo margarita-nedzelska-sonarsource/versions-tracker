@@ -12,44 +12,56 @@ class TestParsingTime {
         val javaTime = measureNanoTime {
             Scrapper.getLatestVersions(Project.JAVA)
         }
-        println("Java time  : $javaTime ns")
+        println("Java time      : $javaTime ns")
 
         val kotlinTime = measureNanoTime {
             Scrapper.getLatestVersions(Project.KOTLIN)
         }
-        println("Kotlin time: $kotlinTime ns")
+        println("Kotlin time    : $kotlinTime ns")
 
         val scalaTime = measureNanoTime {
             Scrapper.getLatestVersions(Project.SCALA)
         }
-        println("Scala time : $scalaTime ns")
+        println("Scala time     : $scalaTime ns")
 
         val goTime = measureNanoTime {
             Scrapper.getLatestVersions(Project.GO)
         }
-        println("Go time    : $goTime ns")
+        println("Go time        : $goTime ns")
 
         val rubyTime = measureNanoTime {
             Scrapper.getLatestVersions(Project.RUBY)
         }
-        println("Ruby time  : $rubyTime ns")
+        println("Ruby time      : $rubyTime ns")
 
         val swiftTime = measureNanoTime {
             Scrapper.getLatestVersions(Project.SWIFT)
         }
-        println("Swift time : $swiftTime ns")
+        println("Swift time     : $swiftTime ns")
 
         val dottyTime = measureNanoTime {
             Scrapper.getLatestVersions(Project.DOTTY)
         }
-        println("Dotty time : $dottyTime ns")
+        println("Dotty time     : $dottyTime ns")
+
+        val scalaMetaTime = measureNanoTime {
+            Scrapper.getLatestVersions(Project.SCALA_META)
+        }
+        println("ScalaMeta time : $scalaMetaTime ns")
+
+        val jdtTime = measureNanoTime {
+            Scrapper.getLatestVersions(Project.JDT)
+        }
+        println("JDT time       : $jdtTime ns")
 
         val allTime = measureNanoTime {
             Scrapper.getLatestVersions()
         }
-        println("All time   : $allTime ns")
 
-        assertThat(allTime).isLessThan(javaTime + kotlinTime + scalaTime + goTime + rubyTime + swiftTime)
+        println("All time       : $allTime ns")
+
+        assertThat(allTime)
+            .isLessThan(javaTime + kotlinTime + scalaTime + goTime + rubyTime + swiftTime + dottyTime + scalaMetaTime + jdtTime)
     }
 
 }

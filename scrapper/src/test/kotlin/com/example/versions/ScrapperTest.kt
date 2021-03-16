@@ -15,7 +15,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(JAVA)
         
         assertThat(latestVersions).containsOnly(
-                JAVA to Release(LATEST_KNOWN_VERSIONS[JAVA]!!, listOf("oracle.com/java/technologies/javase/15u-relnotes.html"))
+                JAVA to Release(LATEST_KNOWN_VERSIONS[JAVA]!!, listOf("oracle.com/java/technologies/javase/16u-relnotes.html"))
         )
     }
 
@@ -87,7 +87,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(JDT)
 
         assertThat(latestVersions).containsOnly(
-            JDT to Release(LATEST_KNOWN_VERSIONS[JDT]!!, listOf("https://git.eclipse.org/r/plugins/gitiles/jdt/eclipse.jdt.core/+/refs/tags/R4_18"))
+            JDT to Release(LATEST_KNOWN_VERSIONS[JDT]!!, listOf("https://git.eclipse.org/r/plugins/gitiles/jdt/eclipse.jdt.core/+/refs/tags/R4_19"))
         )
     }
 

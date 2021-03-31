@@ -24,7 +24,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(KOTLIN)
         
         assertThat(latestVersions).containsOnly(
-                KOTLIN to Release(LATEST_KNOWN_VERSIONS[KOTLIN]!!, listOf("https://github.com/JetBrains/kotlin/releases/tag/v1.4.31"))
+                KOTLIN to Release(LATEST_KNOWN_VERSIONS[KOTLIN]!!, listOf("https://github.com/JetBrains/kotlin/releases/tag/v1.4.32"))
         )
     }
 

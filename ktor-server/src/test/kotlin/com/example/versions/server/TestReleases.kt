@@ -31,7 +31,7 @@ val GO_RELEASE =
 val RUBY_RELEASE =
     """"RUBY" : {
                         "version" : "${LATEST_KNOWN_VERSIONS[RUBY]}",
-                        "notes" : [ "www.ruby-lang.org/en/news/2020/12/25/ruby-3-0-0-released/" ]
+                        "notes" : [ "www.ruby-lang.org/en/news/2021/04/05/ruby-3-0-1-released/" ]
                       }"""
 
 val SWIFT_RELEASE =
@@ -91,7 +91,7 @@ val RUBY_RELEASE_RECORD = """{
   "project" : "RUBY",
   "supportedVersion" : "${SUPPORTED_VERSIONS[RUBY]}",
   "latestVersion" : "${LATEST_KNOWN_VERSIONS[RUBY]}",
-  "latestReleaseNote" : "www.ruby-lang.org/en/news/2020/12/25/ruby-3-0-0-released/"
+  "latestReleaseNote" : "www.ruby-lang.org/en/news/2021/04/05/ruby-3-0-1-released/"
 }"""
 
 val SWIFT_RELEASE_RECORD = """{

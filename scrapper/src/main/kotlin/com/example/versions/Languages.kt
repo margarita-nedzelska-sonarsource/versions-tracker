@@ -32,7 +32,7 @@ object Languages {
         Project.KOTLIN to "1.4.32",
         Project.SCALA to "2.13.5",
         Project.GO to "1.16",
-        Project.RUBY to "3.0.0",
+        Project.RUBY to "3.0.1",
         Project.APEX to "50",
         Project.SWIFT to "5.3.3",
         Project.DOTTY to "0.26.0",

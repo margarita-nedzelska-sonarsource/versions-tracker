@@ -51,7 +51,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(RUBY)
         
         assertThat(latestVersions).containsOnly(
-                RUBY to Release(LATEST_KNOWN_VERSIONS[RUBY]!!, listOf("www.ruby-lang.org/en/news/2020/12/25/ruby-3-0-0-released/"))
+                RUBY to Release(LATEST_KNOWN_VERSIONS[RUBY]!!, listOf("www.ruby-lang.org/en/news/2021/04/05/ruby-3-0-1-released/"))
         )
     }
     

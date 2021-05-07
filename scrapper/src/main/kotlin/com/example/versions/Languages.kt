@@ -29,7 +29,7 @@ object Languages {
 
     val LATEST_KNOWN_VERSIONS: Map<Project, String> = mapOf(
         Project.JAVA to "16",
-        Project.KOTLIN to "1.4.32",
+        Project.KOTLIN to "1.5.0",
         Project.SCALA to "2.13.5",
         Project.GO to "1.16",
         Project.RUBY to "3.0.1",

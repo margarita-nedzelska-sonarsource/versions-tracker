@@ -2,11 +2,13 @@ package com.example.versions
 
 import assertk.assertThat
 import assertk.assertions.containsOnly
-import com.example.versions.Project.*
 import com.example.versions.Languages.LATEST_KNOWN_VERSIONS
+import com.example.versions.Project.*
 import com.example.versions.parsers.Release
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
+import java.io.IOException
+import java.nio.charset.Charset
 
 class ScrapperTest {
     
@@ -24,7 +26,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(KOTLIN)
         
         assertThat(latestVersions).containsOnly(
-                KOTLIN to Release(LATEST_KNOWN_VERSIONS[KOTLIN]!!, listOf("https://github.com/JetBrains/kotlin/releases/tag/v1.4.32"))
+                KOTLIN to Release(LATEST_KNOWN_VERSIONS[KOTLIN]!!, listOf("https://github.com/JetBrains/kotlin/releases/tag/v1.5.0"))
         )
     }
 
@@ -107,5 +109,30 @@ class ScrapperTest {
                         SCALA_META to LATEST_KNOWN_VERSIONS[SCALA_META],
                         JDT to LATEST_KNOWN_VERSIONS[JDT],
                 )
+    }
+}
+
+open class Parent {
+    fun foo(): Unit = TODO()
+}
+
+class Outer {
+    fun foo(): Unit = TODO()
+
+    inner class Inner: Parent() {
+
+        fun doSth() {
+            try {
+                "".toString()
+                TODO()
+            } catch (e: IOException) {
+                print(e)
+            } catch (e: RuntimeException) {
+                print(e)
+            }
+
+            this@Outer.foo()
+        }
+
     }
 }

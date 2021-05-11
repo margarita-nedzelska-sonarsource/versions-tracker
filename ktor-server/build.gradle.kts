@@ -1,5 +1,4 @@
 plugins {
-    jacoco
     application
 }
 
@@ -7,13 +6,9 @@ repositories {
     jcenter()
 }
 
-jacoco {
-    toolVersion = "0.8.7"
-    reportsDir = file("$buildDir/reports/jacoco")
-}
-
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.0")
     implementation("io.ktor:ktor-server-core:1.5.4")
     implementation("io.ktor:ktor-server-netty:1.5.4")
     implementation("io.ktor:ktor-jackson:1.5.4")
@@ -34,12 +29,4 @@ application {
 tasks.test {
     useJUnitPlatform()
     finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
-}
-tasks.jacocoTestReport {
-    dependsOn(tasks.test) // tests are required to run before generating the report
-    reports {
-        xml.isEnabled = true
-        csv.isEnabled = false
-        html.destination = file("${buildDir}/jacocoHtml")
-    }
 }

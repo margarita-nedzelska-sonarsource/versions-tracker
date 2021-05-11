@@ -1,4 +1,5 @@
 plugins {
+    jacoco
     kotlin("jvm") version "1.5.0"
     id("com.github.johnrengelman.shadow") version "6.1.0"
 }
@@ -15,6 +16,11 @@ allprojects {
 subprojects {
     apply(plugin = "java")
     apply(plugin = "kotlin")
+    apply(plugin = "jacoco")
+
+    jacoco {
+        toolVersion = "0.8.7"
+    }
 
     val compileKotlin: org.jetbrains.kotlin.gradle.tasks.KotlinCompile by tasks
     compileKotlin.kotlinOptions.useIR = true

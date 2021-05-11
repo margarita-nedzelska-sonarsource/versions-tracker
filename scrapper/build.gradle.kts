@@ -1,12 +1,3 @@
-plugins {
-    jacoco
-}
-
-jacoco {
-    toolVersion = "0.8.6"
-    reportsDir = file("$buildDir/reports/jacoco")
-}
-
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("org.jsoup:jsoup:1.13.1")

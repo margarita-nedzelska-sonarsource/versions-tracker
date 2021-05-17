@@ -16,7 +16,7 @@ class ScalaReleaseParserTest {
 
         val (version, notes) = scalaReleaseParser.parse(doc)
         
-        assertEquals("2.13.5", version)
-        assertEquals(listOf("github.com/scala/scala/releases/tag/v2.13.5"), notes)
+        assertEquals("2.13.6", version)
+        assertEquals(listOf("github.com/scala/scala/releases/tag/v2.13.6"), notes)
     }
 }

@@ -19,7 +19,7 @@ val KOTLIN_RELEASE =
 val SCALA_RELEASE =
     """"SCALA" : {
                         "version" : "${LATEST_KNOWN_VERSIONS[SCALA]}",
-                        "notes" : [ "github.com/scala/scala/releases/tag/v2.13.5" ]
+                        "notes" : [ "github.com/scala/scala/releases/tag/v2.13.6" ]
                       }"""
 
 val GO_RELEASE =
@@ -43,13 +43,13 @@ val SWIFT_RELEASE =
 val DOTTY_RELEASE =
     """"DOTTY" : {
                         "version" : "${LATEST_KNOWN_VERSIONS[DOTTY]}",
-                        "notes" : [ "https://github.com/lampepfl/dotty/releases/tag/0.26.0" ]
+                        "notes" : [ "https://github.com/lampepfl/dotty/releases/tag/3.0.0" ]
                       }"""
 
 val SCALA_META_RELEASE =
     """"SCALA_META" : {
                         "version" : "${LATEST_KNOWN_VERSIONS[SCALA_META]}",
-                        "notes" : [ "https://github.com/scalameta/scalameta/releases/tag/v4.4.16" ]
+                        "notes" : [ "https://github.com/scalameta/scalameta/releases/tag/v4.4.18" ]
                       }"""
 
 val JDT_RELEASE =
@@ -77,7 +77,7 @@ val SCALA_RELEASE_RECORD = """{
   "project" : "SCALA",
   "supportedVersion" : "${SUPPORTED_VERSIONS[SCALA]}",
   "latestVersion" : "${LATEST_KNOWN_VERSIONS[SCALA]}",
-  "latestReleaseNote" : "github.com/scala/scala/releases/tag/v2.13.5"
+  "latestReleaseNote" : "github.com/scala/scala/releases/tag/v2.13.6"
 }"""
 
 val GO_RELEASE_RECORD = """{
@@ -105,14 +105,14 @@ val DOTTY_RELEASE_RECORD = """{
   "project" : "DOTTY",
   "supportedVersion" : "${SUPPORTED_VERSIONS[DOTTY]}",
   "latestVersion" : "${LATEST_KNOWN_VERSIONS[DOTTY]}",
-  "latestReleaseNote" : "https://github.com/lampepfl/dotty/releases/tag/0.26.0"
+  "latestReleaseNote" : "https://github.com/lampepfl/dotty/releases/tag/3.0.0"
 }"""
 
 val SCALA_META_RELEASE_RECORD = """{
   "project" : "SCALA_META",
   "supportedVersion" : "${SUPPORTED_VERSIONS[SCALA_META]}",
   "latestVersion" : "${LATEST_KNOWN_VERSIONS[SCALA_META]}",
-  "latestReleaseNote" : "https://github.com/scalameta/scalameta/releases/tag/v4.4.16"
+  "latestReleaseNote" : "https://github.com/scalameta/scalameta/releases/tag/v4.4.18"
 }"""
 
 val JDT_RELEASE_RECORD = """{

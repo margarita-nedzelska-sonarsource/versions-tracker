@@ -35,7 +35,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(SCALA)
         
         assertThat(latestVersions).containsOnly(
-                SCALA to Release(LATEST_KNOWN_VERSIONS[SCALA]!!, listOf("github.com/scala/scala/releases/tag/v2.13.5"))
+                SCALA to Release(LATEST_KNOWN_VERSIONS[SCALA]!!, listOf("github.com/scala/scala/releases/tag/v2.13.6"))
         )
     }
 
@@ -71,7 +71,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(DOTTY)
 
         assertThat(latestVersions).containsOnly(
-                DOTTY to Release(LATEST_KNOWN_VERSIONS[DOTTY]!!, listOf("https://github.com/lampepfl/dotty/releases/tag/0.26.0"))
+                DOTTY to Release(LATEST_KNOWN_VERSIONS[DOTTY]!!, listOf("https://github.com/lampepfl/dotty/releases/tag/3.0.0"))
         )
     }
 
@@ -80,7 +80,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(SCALA_META)
 
         assertThat(latestVersions).containsOnly(
-            SCALA_META to Release(LATEST_KNOWN_VERSIONS[SCALA_META]!!, listOf("https://github.com/scalameta/scalameta/releases/tag/v4.4.16"))
+            SCALA_META to Release(LATEST_KNOWN_VERSIONS[SCALA_META]!!, listOf("https://github.com/scalameta/scalameta/releases/tag/v4.4.18"))
         )
     }
 

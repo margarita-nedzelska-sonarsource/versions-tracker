@@ -8,7 +8,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.0")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.10")
     implementation("io.ktor:ktor-server-core:1.5.4")
     implementation("io.ktor:ktor-server-netty:1.5.4")
     implementation("io.ktor:ktor-jackson:1.5.4")

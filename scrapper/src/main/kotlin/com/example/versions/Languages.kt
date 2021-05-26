@@ -34,7 +34,7 @@ object Languages {
         Project.GO to "1.16",
         Project.RUBY to "3.0.1",
         Project.APEX to "50",
-        Project.SWIFT to "5.4",
+        Project.SWIFT to "5.4.1",
         Project.DOTTY to "3.0.0",
         Project.SCALA_META to "4.4.18",
         Project.JDT to "4.19",

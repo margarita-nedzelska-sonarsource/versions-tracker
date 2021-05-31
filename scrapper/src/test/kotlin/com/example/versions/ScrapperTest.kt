@@ -111,28 +111,3 @@ class ScrapperTest {
                 )
     }
 }
-
-open class Parent {
-    fun foo(): Unit = TODO()
-}
-
-class Outer {
-    fun foo(): Unit = TODO()
-
-    inner class Inner: Parent() {
-
-        fun doSth() {
-            try {
-                "".toString()
-                TODO()
-            } catch (e: IOException) {
-                print(e)
-            } catch (e: RuntimeException) {
-                print(e)
-            }
-
-            this@Outer.foo()
-        }
-
-    }
-}

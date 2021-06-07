@@ -36,7 +36,7 @@ object Languages {
         Project.APEX to "50",
         Project.SWIFT to "5.4.1",
         Project.DOTTY to "3.0.0",
-        Project.SCALA_META to "4.4.20",
+        Project.SCALA_META to "4.4.21",
         Project.JDT to "4.19",
     )
     

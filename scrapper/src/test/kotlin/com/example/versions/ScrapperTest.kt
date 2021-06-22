@@ -89,7 +89,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(JDT)
 
         assertThat(latestVersions).containsOnly(
-            JDT to Release(LATEST_KNOWN_VERSIONS[JDT]!!, listOf("https://git.eclipse.org/r/plugins/gitiles/jdt/eclipse.jdt.core/+/refs/tags/R4_19"))
+            JDT to Release(LATEST_KNOWN_VERSIONS[JDT]!!, listOf("https://git.eclipse.org/r/plugins/gitiles/jdt/eclipse.jdt.core/+/refs/tags/R4_20"))
         )
     }
 

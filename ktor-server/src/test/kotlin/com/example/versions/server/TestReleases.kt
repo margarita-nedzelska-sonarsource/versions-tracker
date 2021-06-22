@@ -55,7 +55,7 @@ val SCALA_META_RELEASE =
 val JDT_RELEASE =
     """"JDT" : {
                         "version" : "${LATEST_KNOWN_VERSIONS[JDT]}",
-                        "notes" : [ "https://git.eclipse.org/r/plugins/gitiles/jdt/eclipse.jdt.core/+/refs/tags/R4_19" ]
+                        "notes" : [ "https://git.eclipse.org/r/plugins/gitiles/jdt/eclipse.jdt.core/+/refs/tags/R4_20" ]
                       }"""
 
 val JAVA_RELEASE_RECORD =
@@ -119,5 +119,5 @@ val JDT_RELEASE_RECORD = """{
   "project" : "JDT",
   "supportedVersion" : "${SUPPORTED_VERSIONS[JDT]}",
   "latestVersion" : "${LATEST_KNOWN_VERSIONS[JDT]}",
-  "latestReleaseNote" : "https://git.eclipse.org/r/plugins/gitiles/jdt/eclipse.jdt.core/+/refs/tags/R4_19"
+  "latestReleaseNote" : "https://git.eclipse.org/r/plugins/gitiles/jdt/eclipse.jdt.core/+/refs/tags/R4_20"
 }"""

@@ -1,6 +1,6 @@
 plugins {
     jacoco
-    kotlin("jvm") version "1.5.10"
+    kotlin("jvm") version "1.5.20"
     id("com.github.johnrengelman.shadow") version "6.1.0"
 }
 

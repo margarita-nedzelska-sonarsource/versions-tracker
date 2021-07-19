@@ -8,7 +8,6 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
-import java.util.*
 
 suspend fun main() {
     val latestVersions = Scrapper.getLatestVersions(SCALA, JAVA, KOTLIN, GO, RUBY, SWIFT, DOTTY)
@@ -38,18 +37,14 @@ object Scrapper {
                 .map {
                     val url = Languages.RELEASES_URL[it]
                     it to async { PARSERS[it]?.parse(url?.connect()) }
-                }
-                .map { (lang, deferred) -> lang to deferred.await() }
-                .toMap()
+                }.associate { (lang, deferred) -> lang to deferred.await() }
         }
         val githubReleases = GlobalScope.async {
             langs
                 .filter(GIT_HUB_PARSERS::containsKey)
                 .map {
                     it to async { GIT_HUB_PARSERS[it]?.parse() }
-                }
-                .map { (lang, deferred) -> lang to deferred.await() }
-                .toMap()
+                }.associate { (lang, deferred) -> lang to deferred.await() }
         }
         return htmlReleases.await() + githubReleases.await()
     }

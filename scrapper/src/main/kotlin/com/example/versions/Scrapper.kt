@@ -71,7 +71,7 @@ object Scrapper {
 
 suspend fun String?.getLatestVersions() = this
     ?.split(",")
-    ?.map {it.toUpperCase(Locale.ROOT)}
+    ?.map { it.uppercase() }
     ?.filter { Project.values().map(Project::name).contains(it) }
     ?.map { valueOf(it) }
     .let { Scrapper.getLatestVersions(*it?.toTypedArray() ?: values()) }

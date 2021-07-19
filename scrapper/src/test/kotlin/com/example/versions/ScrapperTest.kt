@@ -7,8 +7,6 @@ import com.example.versions.Project.*
 import com.example.versions.parsers.Release
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
-import java.io.IOException
-import java.nio.charset.Charset
 
 class ScrapperTest {
     
@@ -26,7 +24,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(KOTLIN)
         
         assertThat(latestVersions).containsOnly(
-                KOTLIN to Release(LATEST_KNOWN_VERSIONS[KOTLIN]!!, listOf("https://github.com/JetBrains/kotlin/releases/tag/v1.5.20"))
+                KOTLIN to Release(LATEST_KNOWN_VERSIONS[KOTLIN]!!, listOf("https://github.com/JetBrains/kotlin/releases/tag/v1.5.21"))
         )
     }
 
@@ -53,7 +51,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(RUBY)
         
         assertThat(latestVersions).containsOnly(
-                RUBY to Release(LATEST_KNOWN_VERSIONS[RUBY]!!, listOf("www.ruby-lang.org/en/news/2021/04/05/ruby-3-0-1-released/"))
+                RUBY to Release(LATEST_KNOWN_VERSIONS[RUBY]!!, listOf("www.ruby-lang.org/en/news/2021/07/07/ruby-3-0-2-released/"))
         )
     }
     
@@ -62,7 +60,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(SWIFT)
         
         assertThat(latestVersions).containsOnly(
-                SWIFT to Release(LATEST_KNOWN_VERSIONS[SWIFT]!!, listOf("https://github.com/apple/swift/releases/tag/swift-5.4.1-RELEASE"))
+                SWIFT to Release(LATEST_KNOWN_VERSIONS[SWIFT]!!, listOf("https://github.com/apple/swift/releases/tag/swift-5.4.2-RELEASE"))
         )
     }
     
@@ -71,7 +69,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(DOTTY)
 
         assertThat(latestVersions).containsOnly(
-                DOTTY to Release(LATEST_KNOWN_VERSIONS[DOTTY]!!, listOf("https://github.com/lampepfl/dotty/releases/tag/3.0.0"))
+                DOTTY to Release(LATEST_KNOWN_VERSIONS[DOTTY]!!, listOf("https://github.com/lampepfl/dotty/releases/tag/3.0.1"))
         )
     }
 
@@ -80,7 +78,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(SCALA_META)
 
         assertThat(latestVersions).containsOnly(
-            SCALA_META to Release(LATEST_KNOWN_VERSIONS[SCALA_META]!!, listOf("https://github.com/scalameta/scalameta/releases/tag/v4.4.21"))
+            SCALA_META to Release(LATEST_KNOWN_VERSIONS[SCALA_META]!!, listOf("https://github.com/scalameta/scalameta/releases/tag/v4.4.24"))
         )
     }
 

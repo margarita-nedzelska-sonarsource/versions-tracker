@@ -13,7 +13,7 @@ val JAVA_RELEASE =
 val KOTLIN_RELEASE =
     """"KOTLIN" : {
                         "version" : "${LATEST_KNOWN_VERSIONS[KOTLIN]}",
-                        "notes" : [ "https://github.com/JetBrains/kotlin/releases/tag/v1.5.20" ]
+                        "notes" : [ "https://github.com/JetBrains/kotlin/releases/tag/v1.5.21" ]
                       }"""
 
 val SCALA_RELEASE =
@@ -31,25 +31,25 @@ val GO_RELEASE =
 val RUBY_RELEASE =
     """"RUBY" : {
                         "version" : "${LATEST_KNOWN_VERSIONS[RUBY]}",
-                        "notes" : [ "www.ruby-lang.org/en/news/2021/04/05/ruby-3-0-1-released/" ]
+                        "notes" : [ "www.ruby-lang.org/en/news/2021/07/07/ruby-3-0-2-released/" ]
                       }"""
 
 val SWIFT_RELEASE =
     """"SWIFT" : {
                         "version" : "${LATEST_KNOWN_VERSIONS[SWIFT]}",
-                        "notes" : [ "https://github.com/apple/swift/releases/tag/swift-5.4.1-RELEASE" ]
+                        "notes" : [ "https://github.com/apple/swift/releases/tag/swift-5.4.2-RELEASE" ]
                       }"""
 
 val DOTTY_RELEASE =
     """"DOTTY" : {
                         "version" : "${LATEST_KNOWN_VERSIONS[DOTTY]}",
-                        "notes" : [ "https://github.com/lampepfl/dotty/releases/tag/3.0.0" ]
+                        "notes" : [ "https://github.com/lampepfl/dotty/releases/tag/3.0.1" ]
                       }"""
 
 val SCALA_META_RELEASE =
     """"SCALA_META" : {
                         "version" : "${LATEST_KNOWN_VERSIONS[SCALA_META]}",
-                        "notes" : [ "https://github.com/scalameta/scalameta/releases/tag/v4.4.21" ]
+                        "notes" : [ "https://github.com/scalameta/scalameta/releases/tag/v4.4.24" ]
                       }"""
 
 val JDT_RELEASE =
@@ -70,7 +70,7 @@ val KOTLIN_RELEASE_RECORD = """{
   "project" : "KOTLIN",
   "supportedVersion" : "${SUPPORTED_VERSIONS[KOTLIN]}",
   "latestVersion" : "${LATEST_KNOWN_VERSIONS[KOTLIN]}",
-  "latestReleaseNote" : "https://github.com/JetBrains/kotlin/releases/tag/v1.5.20"
+  "latestReleaseNote" : "https://github.com/JetBrains/kotlin/releases/tag/v1.5.21"
 }"""
 
 val SCALA_RELEASE_RECORD = """{
@@ -91,28 +91,28 @@ val RUBY_RELEASE_RECORD = """{
   "project" : "RUBY",
   "supportedVersion" : "${SUPPORTED_VERSIONS[RUBY]}",
   "latestVersion" : "${LATEST_KNOWN_VERSIONS[RUBY]}",
-  "latestReleaseNote" : "www.ruby-lang.org/en/news/2021/04/05/ruby-3-0-1-released/"
+  "latestReleaseNote" : "www.ruby-lang.org/en/news/2021/07/07/ruby-3-0-2-released/"
 }"""
 
 val SWIFT_RELEASE_RECORD = """{
   "project" : "SWIFT",
   "supportedVersion" : "${SUPPORTED_VERSIONS[SWIFT]}",
   "latestVersion" : "${LATEST_KNOWN_VERSIONS[SWIFT]}",
-  "latestReleaseNote" : "https://github.com/apple/swift/releases/tag/swift-5.4.1-RELEASE"
+  "latestReleaseNote" : "https://github.com/apple/swift/releases/tag/swift-5.4.2-RELEASE"
 }"""
 
 val DOTTY_RELEASE_RECORD = """{
   "project" : "DOTTY",
   "supportedVersion" : "${SUPPORTED_VERSIONS[DOTTY]}",
   "latestVersion" : "${LATEST_KNOWN_VERSIONS[DOTTY]}",
-  "latestReleaseNote" : "https://github.com/lampepfl/dotty/releases/tag/3.0.0"
+  "latestReleaseNote" : "https://github.com/lampepfl/dotty/releases/tag/3.0.1"
 }"""
 
 val SCALA_META_RELEASE_RECORD = """{
   "project" : "SCALA_META",
   "supportedVersion" : "${SUPPORTED_VERSIONS[SCALA_META]}",
   "latestVersion" : "${LATEST_KNOWN_VERSIONS[SCALA_META]}",
-  "latestReleaseNote" : "https://github.com/scalameta/scalameta/releases/tag/v4.4.21"
+  "latestReleaseNote" : "https://github.com/scalameta/scalameta/releases/tag/v4.4.24"
 }"""
 
 val JDT_RELEASE_RECORD = """{

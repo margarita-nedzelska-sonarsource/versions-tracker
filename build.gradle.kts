@@ -22,9 +22,6 @@ subprojects {
     jacoco {
         toolVersion = "0.8.7"
     }
-
-    val compileKotlin: org.jetbrains.kotlin.gradle.tasks.KotlinCompile by tasks
-    compileKotlin.kotlinOptions.useIR = true
 }
 
 sonarqube {

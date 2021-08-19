@@ -4,8 +4,8 @@ import com.example.versions.Project.*
 import com.example.versions.data.ReleaseRecord
 import com.example.versions.parsers.*
 import com.example.versions.parsers.github.*
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 
@@ -30,23 +30,21 @@ object Scrapper {
         SCALA_META to ScalaMetaGithubParser(),
     )
 
-    suspend fun getLatestVersions(vararg langs: Project = values()): Map<Project, Release?> {
-        val htmlReleases = GlobalScope.async {
-            langs
-                .filter(PARSERS::containsKey)
+    suspend fun getLatestVersions(vararg langs: Project = values()): Map<Project, Release?>  = coroutineScope {
+        val htmlReleases = async {
+            langs.filter(PARSERS::containsKey)
                 .map {
                     val url = Languages.RELEASES_URL[it]
                     it to async { PARSERS[it]?.parse(url?.connect()) }
                 }.associate { (lang, deferred) -> lang to deferred.await() }
         }
-        val githubReleases = GlobalScope.async {
-            langs
-                .filter(GIT_HUB_PARSERS::containsKey)
+        val githubReleases = async {
+            langs.filter(GIT_HUB_PARSERS::containsKey)
                 .map {
                     it to async { GIT_HUB_PARSERS[it]?.parse() }
                 }.associate { (lang, deferred) -> lang to deferred.await() }
         }
-        return htmlReleases.await() + githubReleases.await()
+        htmlReleases.await() + githubReleases.await()
     }
 
     fun invalidateCache() {

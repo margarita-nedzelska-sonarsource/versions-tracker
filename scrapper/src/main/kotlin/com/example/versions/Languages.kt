@@ -31,7 +31,7 @@ object Languages {
         Project.JAVA to "16",
         Project.KOTLIN to "1.5.21",
         Project.SCALA to "2.13.6",
-        Project.GO to "1.16",
+        Project.GO to "1.17",
         Project.RUBY to "3.0.2",
         Project.APEX to "50",
         Project.SWIFT to "5.4.2",

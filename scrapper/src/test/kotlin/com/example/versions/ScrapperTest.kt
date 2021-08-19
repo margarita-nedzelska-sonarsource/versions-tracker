@@ -42,7 +42,7 @@ class ScrapperTest {
         val latestVersions = Scrapper.getLatestVersions(GO)
         
         assertThat(latestVersions).containsOnly(
-                GO to Release(LATEST_KNOWN_VERSIONS[GO]!!, listOf("golang.org/doc/go1.16"))
+                GO to Release(LATEST_KNOWN_VERSIONS[GO]!!, listOf("golang.org/doc/go1.17"))
         )
     }
 

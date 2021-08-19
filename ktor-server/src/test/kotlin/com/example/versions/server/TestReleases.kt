@@ -49,7 +49,7 @@ val DOTTY_RELEASE =
 val SCALA_META_RELEASE =
     """"SCALA_META" : {
                         "version" : "${LATEST_KNOWN_VERSIONS[SCALA_META]}",
-                        "notes" : [ "https://github.com/scalameta/scalameta/releases/tag/v4.4.24" ]
+                        "notes" : [ "https://github.com/scalameta/scalameta/releases/tag/v4.4.27" ]
                       }"""
 
 val JDT_RELEASE =
@@ -112,7 +112,7 @@ val SCALA_META_RELEASE_RECORD = """{
   "project" : "SCALA_META",
   "supportedVersion" : "${SUPPORTED_VERSIONS[SCALA_META]}",
   "latestVersion" : "${LATEST_KNOWN_VERSIONS[SCALA_META]}",
-  "latestReleaseNote" : "https://github.com/scalameta/scalameta/releases/tag/v4.4.24"
+  "latestReleaseNote" : "https://github.com/scalameta/scalameta/releases/tag/v4.4.27"
 }"""
 
 val JDT_RELEASE_RECORD = """{
